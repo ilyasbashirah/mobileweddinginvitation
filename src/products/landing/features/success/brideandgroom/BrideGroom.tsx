@@ -69,44 +69,49 @@ export default function BrideGroom(props: BrideGroomProps) {
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <Typography
-          variant={"heading-2-regular"}
+          variant={"heading-1-regular"}
           color={"cooper"}
           family={"greatvibes"}
-          align={'center'}
+          align={"center"}
         >
           {titleText}
         </Typography>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
-          align={'center'}
+          align={"center"}
         >
           {quoteMeaningText}
         </Typography>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
-          align={'center'}
+          align={"center"}
         >
           {quoteSurahText}
         </Typography>
 
         <div className={style["container-bride-photos"]}>
-          <img src={"/desktop/brideandgroom/brideandgroom_yasmin.svg"} />
+          <img
+            className={style["image-bride-and-groom"]}
+            src={"/desktop/brideandgroom/brideandgroom_yasmin.svg"}
+          />
           <div className={style["container-identity"]}>
             <Typography
-              variant={'subtitle-1-bold'}
+              variant={"subtitle-2-bold"}
               color={"onyx"}
               family={"montserrat"}
+              align={"center"}
             >
               {brideNameText}
             </Typography>
             <Typography
-              variant={"body-1-medium"}
+              variant={"body-2-medium"}
               color={"onyx"}
               family={"montserrat"}
+              align={"center"}
             >
               {brideIdentityText}
             </Typography>
@@ -114,23 +119,28 @@ export default function BrideGroom(props: BrideGroomProps) {
         </div>
 
         <div className={style["container-groom-photos"]}>
+          <img
+            className={style["image-bride-and-groom"]}
+            src={"/desktop/brideandgroom/brideandgroom_bas.svg"}
+          />
           <div className={style["container-identity"]}>
             <Typography
-              variant={'subtitle-1-bold'}
+              variant={"subtitle-2-bold"}
               color={"onyx"}
               family={"montserrat"}
+              align={"center"}
             >
               {groomNameText}
             </Typography>
             <Typography
-              variant={"body-1-medium"}
+              variant={"body-2-medium"}
               color={"onyx"}
               family={"montserrat"}
+              align={"center"}
             >
               {groomIdentityText}
             </Typography>
           </div>
-          <img src={"/desktop/brideandgroom/brideandgroom_bas.svg"} />
         </div>
       </Section>
     </Banner>

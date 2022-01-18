@@ -4,24 +4,20 @@ import { Color } from "@/src/styles/typescript/types/color";
 
 type Variant =
   | "heading-1-regular"
-  | "heading-2-regular"
-  | "heading-3-bold"
   | "subtitle-1-bold"
   | "subtitle-2-bold"
-  | "subtitle-2-semibold"
   | "body-1-bold"
   | "body-1-semibold"
   | "body-1-medium"
+  | "body-2-bold"
   | "body-2-semibold"
-  | "body-3-bold"
-  | "body-3-medium"
-  | "body-4-medium"
-  | "caption-1-bold";
+  | "body-2-medium"
+  | "caption-1-semibold";
 
 type Align = "left" | "right" | "center";
 const Typography = ({
   children,
-  variant = "heading-2-regular",
+  variant = "heading-1-regular",
   align = "left",
   color = "light-gray",
   paragraph = true,

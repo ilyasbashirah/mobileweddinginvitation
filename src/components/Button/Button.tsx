@@ -26,7 +26,12 @@ export default function ButtonBase({
       className={`${style.button} `}
     >
       {children}
-      <Typography family={'montserrat'} variant={"body-3-bold"} align={"center"} color={"white"}>
+      <Typography
+        family={"montserrat"}
+        variant={"body-1-bold"}
+        align={"center"}
+        color={"white"}
+      >
         {text}
       </Typography>
     </button>

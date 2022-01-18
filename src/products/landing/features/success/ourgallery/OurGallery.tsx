@@ -11,7 +11,7 @@ export default function OurGallery(props: OurGalleryProps) {
   const textDatas = {
     title: {
       en: "Our Gallery",
-      ina: "Our Gallery",
+      ina: "Galeri Foto",
     },
     description: {
       en: "We would like to share our beautiful memories to you",
@@ -31,7 +31,7 @@ export default function OurGallery(props: OurGalleryProps) {
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <Typography
-          variant={"heading-2-regular"}
+          variant={"heading-1-regular"}
           color={"cooper"}
           family={"greatvibes"}
           align={"center"}
@@ -39,13 +39,61 @@ export default function OurGallery(props: OurGalleryProps) {
           {titleText}
         </Typography>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
           align={"center"}
         >
           {descriptionText}
         </Typography>
+
+        <div className={style["container-box-photos-small-large"]}>
+          <div
+            className={style["box-large-photos"]}
+            style={{
+              backgroundImage: `url("/desktop/gallery/photos/photos_top_1.svg")`,
+            }}
+          />
+
+          <div className={style["container-box-photos-small"]}>
+            <div
+              className={style["box-photos"]}
+              style={{
+                backgroundImage: `url("/desktop/gallery/photos/photos_left_1.svg")`,
+              }}
+            />
+            <div
+              className={style["box-photos"]}
+              style={{
+                backgroundImage: `url("/desktop/gallery/photos/photos_right_1.svg")`,
+              }}
+            />
+          </div>
+
+          <div className={style["container-box-photos-small"]}>
+            <div
+              className={style["box-photos"]}
+              style={{
+                backgroundImage: `url("/desktop/gallery/photos/photos_left_2.svg")`,
+              }}
+            />
+            <div
+              className={style["box-photos"]}
+              style={{
+                backgroundImage: `url("/desktop/gallery/photos/photos_right_2.svg")`,
+              }}
+            >
+              <Typography
+                variant={"body-1-semibold"}
+                color={"white"}
+                family={"montserrat"}
+                align={"center"}
+              >
+                {"Lihat Selengkapnya"}
+              </Typography>
+            </div>
+          </div>
+        </div>
       </Section>
     </Banner>
   );

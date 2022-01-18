@@ -3,6 +3,7 @@
 @import "../../styles/scss/global/grid_justify";
 .section-width-1240 {
   display: grid;
+  max-width: 328px;
 }
 
 @mixin section-gap($map) {

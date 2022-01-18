@@ -72,7 +72,7 @@ export default function VenueExplanation(props: VenueExplanationProps) {
                         />
                         <Typography
                           family={"montserrat"}
-                          variant={"body-4-medium"}
+                          variant={"body-2-medium"}
                           color={"cooper"}
                         >
                           {textDatas[key][keyAspect]["ina"]}
@@ -98,7 +98,7 @@ export default function VenueExplanation(props: VenueExplanationProps) {
         </div>
 
         <div className={style["section-button"]}>
-          <Button text={"Send invitation"} />
+          <Button text={"Buka Maps"} />
         </div>
       </div>
     </Card>

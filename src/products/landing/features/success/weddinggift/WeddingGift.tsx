@@ -45,7 +45,7 @@ export default function WeddingGift(props: WeddingGiftProps) {
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <Typography
-          variant={"heading-2-regular"}
+          variant={"heading-1-regular"}
           color={"cooper"}
           family={"greatvibes"}
           align={"center"}
@@ -53,7 +53,7 @@ export default function WeddingGift(props: WeddingGiftProps) {
           {titleText}
         </Typography>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
           align={"center"}

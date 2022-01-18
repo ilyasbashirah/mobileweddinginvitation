@@ -1,6 +1,6 @@
 .section-card-maps-location {
   display: grid;
-  grid-template-columns: 720px 488px;
+  grid-template-columns: 1fr;
   align-items: flex-start;
   align-content: flex-start;
   justify-items: flex-start;
@@ -14,7 +14,7 @@
   align-content: flex-start;
   justify-items: center;
   justify-content: center;
-  row-gap: 44px;
+  row-gap: 24px;
 }
 
 .section-maps-location-description {
@@ -23,5 +23,5 @@
   align-content: flex-start;
   justify-items: center;
   justify-content: center;
-  row-gap: 36px;
+  row-gap: 20px;
 }

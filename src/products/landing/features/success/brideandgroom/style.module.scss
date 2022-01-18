@@ -1,15 +1,15 @@
 .container-bride-and-groom {
   background: url("/desktop/brideandgroom/brideandgroom_background.svg");
   background-size: cover;
-//   background-repeat: no-repeat;
-//   height: 1534px;
-// max-width: 100%;
+  //   background-repeat: no-repeat;
+  //   height: 1534px;
+  // max-width: 100%;
   display: grid;
   justify-content: center;
   justify-items: center;
   align-items: flex-start;
   align-content: flex-start;
-  padding:80px 100px;
+  padding: 80px 100px;
 }
 
 .frame-1240 {
@@ -23,27 +23,31 @@
   align-content: center;
   justify-content: center;
   justify-content: center;
-  grid-template-columns: 458px auto;
-  column-gap: 44px;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
 }
 
 .container-groom-photos {
-    display: grid;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-content: center;
-    grid-template-columns: auto 458px;
-    column-gap: 44px;
-  }
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+}
 
 .container-identity {
   display: grid;
   align-items: center;
   align-content: center;
-  justify-content: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  justify-content: center;
   grid-template-columns: 1fr;
   column-gap: 44px;
   row-gap: 24px;
+}
+.image-bride-and-groom{
+  margin: 0 auto;
+  text-align: center;
 }

@@ -100,7 +100,10 @@ export default function Counting(props: CountingProps) {
     : timerWordingDatas.detik.ina;
   const timeText = [hariText, jamText, menitText, detikText];
   return (
-    <Banner height={'counting-down'} background={"/desktop/countingdown/countingdown_background.svg"}>
+    <Banner
+      height={"counting-down"}
+      background={"/desktop/countingdown/countingdown_background.svg"}
+    >
       <img
         src={"/desktop/countingdown/countingdown_illustration.svg"}
         alt={"bride-and-groom"}
@@ -114,7 +117,11 @@ export default function Counting(props: CountingProps) {
       >
         {nameText}
       </Typography>
-      <Typography family={"montserrat"} variant={"body-1-bold"} color={"onyx"}>
+      <Typography
+        family={"montserrat"}
+        variant={"body-1-medium"}
+        color={"onyx"}
+      >
         {countingText}
       </Typography>
       <div className={style["container-timer"]}>
@@ -126,14 +133,14 @@ export default function Counting(props: CountingProps) {
             <Typography
               family={"montserrat"}
               color={"cooper"}
-              variant={"heading-3-bold"}
+              variant={"subtitle-1-bold"}
             >
               {state[item]}
             </Typography>
             <Typography
               family={"montserrat"}
               color={"cooper"}
-              variant={"body-3-medium"}
+              variant={"caption-1-semibold"}
             >
               {timeText[index]}
             </Typography>

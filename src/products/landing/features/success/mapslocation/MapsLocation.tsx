@@ -31,16 +31,16 @@ export default function MapsLocation(props: MapsLocationProps) {
   return (
     <div className={style["section-maps-location-title"]}>
       <Typography
-        variant={"heading-2-regular"}
+        variant={"heading-1-regular"}
         color={"cooper"}
         family={"greatvibes"}
         align={"center"}
       >
         {titleText}
       </Typography>
-      <div className={style["section-maps-location-description"]} >
+      <div className={style["section-maps-location-description"]}>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
           align={"center"}
@@ -48,7 +48,7 @@ export default function MapsLocation(props: MapsLocationProps) {
           {prayText}
         </Typography>
         <Typography
-          variant={"subtitle-2-bold"}
+          variant={"body-1-bold"}
           color={"cooper"}
           family={"montserrat"}
           align={"center"}
@@ -56,10 +56,10 @@ export default function MapsLocation(props: MapsLocationProps) {
           {dateText}
         </Typography>
 
-        <div className={style["section-card-maps-location"]}>
-          <VenueMaps />
-          <VenueExplanation />
-        </div>
+        {/* <div className={style["section-card-maps-location"]}>
+          <VenueMaps /> */}
+        <VenueExplanation />
+        {/* </div> */}
       </div>
     </div>
   );
