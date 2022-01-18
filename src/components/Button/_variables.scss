@@ -1,0 +1,47 @@
+@use 'sass:map';
+@import '@/styles/scss/global/colors';
+$size: (
+  'wide': (
+    100%,
+    42px,
+  ),
+  'half': (
+    152px,
+    42px,
+  ),
+  'modal': (
+    142px,
+    42px,
+  ),
+  'action': (
+    100px,
+    32px,
+  ),
+  'primary': (
+    390px,
+    48px,
+  ),
+);
+
+$variant: (
+  'primary-enabled': (
+    map.get($colors, 'orange1'),
+    0px,
+  ),
+  'primary-disabled': (
+    map.get($colors, 'button_disabled'),
+    0px,
+  ),
+  'secondary-enabled': (
+    map.get($colors, 'white'),
+    2px solid map.get($colors, 'orange1'),
+  ),
+  'secondary-disabled': (
+    map.get($colors, 'white'),
+    0px,
+  ),
+  'tertiary-enabled': (
+    map.get($colors, 'white'),
+    0px,
+  ),
+);

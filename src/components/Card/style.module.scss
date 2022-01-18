@@ -1,0 +1,24 @@
+.container-outside-card {
+  padding: 1px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to left,
+    #bd8430,
+    #d78732,
+    #d79d4a,
+    #c07d2a,
+    #bd8430
+  );
+}
+
+.container-inside-card {
+  display: grid;
+  width:100%;
+  padding: 31px 20px;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  border-radius: 20px;
+  background-color: white;
+}

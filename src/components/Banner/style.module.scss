@@ -1,0 +1,68 @@
+@import "../../styles/scss/global/grid_align";
+@import "../../styles/scss/global/grid_justify";
+@import "../../styles/scss/global/banner_height";
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  row-gap: 32px;
+  padding:80px 100px;
+}
+
+@mixin banner-align($map) {
+  @each $data-name, $data-selected in $map {
+    @if not map-has-key($map, $data-name) {
+      &--#{$data-name} {
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+    } @else {
+      &--#{$data-name} {
+        align-items: $data-selected;
+        align-content: $data-selected;
+      }
+    }
+  }
+}
+
+@mixin banner-justify($map) {
+  @each $data-name, $data-selected in $map {
+    @if not map-has-key($map, $data-name) {
+      &--#{$data-name} {
+        justify-items: flex-start;
+        justify-content: flex-start;
+      }
+    } @else {
+      &--#{$data-name} {
+        justify-items: $data-selected;
+        justify-content: $data-selected;
+      }
+    }
+  }
+}
+
+@mixin banner-height($map) {
+    @each $data-name, $data-selected in $map {
+      @if not map-has-key($map, $data-name) {
+        &--#{$data-name} {
+          height: 1024px;
+        }
+      } @else {
+        &--#{$data-name} {
+          height: $data-selected;
+        }
+      }
+    }
+  }
+
+.banner-align {
+  @include banner-align($grid-align);
+}
+
+.banner-justify {
+  @include banner-justify($grid-justify);
+}
+
+.banner-height {
+  @include banner-height($banner-height);
+}

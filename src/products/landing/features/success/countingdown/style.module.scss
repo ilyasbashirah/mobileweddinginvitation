@@ -1,0 +1,35 @@
+.container-counting {
+  background: url("/desktop/countingdown/countingdown_background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1024px;
+  min-height: 1024px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.box-tulisan {
+  padding: 32px 20px;
+}
+
+.container-timer {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 24px;
+}
+
+.box-timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px 8px;
+  border: 1px solid #d0ad6b;
+  width: 116px;
+  height: 102px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}

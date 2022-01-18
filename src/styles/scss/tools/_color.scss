@@ -1,0 +1,41 @@
+@mixin color-list($map) {
+  @each $color-name, $color-selected in $map {
+    @if not map-has-key($map, $color-name) {
+      &--#{$color-name} {
+        color: #000;
+      }
+    } @else {
+      &--#{$color-name} {
+        color: $color-selected;
+      }
+    }
+  }
+}
+
+@mixin background-color-list($map) {
+  @each $color-name, $color-selected in $map {
+    @if not map-has-key($map, $color-name) {
+      &--#{$color-name} {
+        background-color: none;
+      }
+    } @else {
+      &--#{$color-name} {
+        background-color: $color-selected;
+      }
+    }
+  }
+}
+
+@mixin divider-color-list($map) {
+  @each $color-name, $color-selected in $map {
+    @if not map-has-key($map, $color-name) {
+      &--#{$color-name} {
+        border-color: none;
+      }
+    } @else {
+      &--#{$color-name} {
+        border-color: $color-selected;
+      }
+    }
+  }
+}

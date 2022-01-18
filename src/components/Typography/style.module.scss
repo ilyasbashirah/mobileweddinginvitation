@@ -1,0 +1,80 @@
+@import "../../styles/scss/global/colors";
+@import "../../styles/scss/global/align";
+@import "../../styles/scss/global/font_name";
+@import "../../styles/scss/tools/color";
+@import "../../styles/scss/global/family";
+
+@mixin align-list($map) {
+  @each $align-name, $align-selected in $map {
+    @if not map-has-key($map, $align-name) {
+      &--#{$align-name} {
+        text-align: left;
+      }
+    } @else {
+      &--#{$align-name} {
+        text-align: $align-selected;
+      }
+    }
+  }
+}
+
+@mixin family-list($map) {
+  @each $align-name, $align-selected in $map {
+    @if not map-has-key($map, $align-name) {
+      &--#{$align-name} {
+        font-family:'Montserrat', sans-serif;
+      }
+    } @else {
+      &--#{$align-name} {
+        font-family: $align-selected;
+      }
+    }
+  }
+}
+
+// config global typography
+@mixin typography($name, $size: null, $lineHeight: null, $weight: null) {
+  &--#{$name} {
+    @if $size != null {
+      font-size: $size;
+    }
+    @if $lineHeight != null {
+      line-height: $lineHeight;
+    }
+    @if $weight != null {
+      font-weight: $weight;
+    }
+  }
+}
+
+@mixin fontVariant($data) {
+  @each $font-name, $property in $data {
+    @if map-has-key($data, $font-name) {
+      @include typography(
+        $font-name,
+        //font-size
+        nth($property, 1),
+        //line-height
+        nth($property, 2),
+        // font-weight
+        nth($property, 3)
+      );
+    }
+  }
+}
+
+.typography {
+  font-style: normal;
+  @include fontVariant($fontName);
+}
+
+.typography-color {
+  @include color-list($colors);
+}
+.typography-align {
+  @include align-list($align);
+}
+
+.typography-family {
+  @include family-list($family);
+}

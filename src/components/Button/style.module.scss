@@ -1,0 +1,75 @@
+// @import "./variables";
+
+// @mixin sizeButton($sizeWidth, $sizeHeight, $name) {
+//   &--#{$name} {
+//     @if $sizeWidth != null {
+//       width: $sizeWidth;
+//     }
+//     @if $sizeHeight != null {
+//       height: $sizeHeight;
+//     }
+//   }
+// }
+
+// @mixin variantButton($background, $border, $name) {
+//   &--#{$name} {
+//     @if $size != null {
+//       background-color: $background;
+//     }
+//     @if $border != null {
+//       border: $border;
+//     }
+//   }
+// }
+
+// @mixin paramsController(
+//   $name,
+//   $params1: null,
+//   $params2: null,
+//   $params: "size"
+// ) {
+//   @if $params == "size" {
+//     @include sizeButton($params1, $params2, $name);
+//   } @else {
+//     @include variantButton($params1, $params2, $name);
+//   }
+// }
+
+// @mixin deviceController($data, $params) {
+//   @each $name, $property in $data {
+//     @if map-has-key($data, $name) {
+//       @include paramsController(
+//         $name,
+//         //width
+//         nth($property, 1),
+//         //height
+//         nth($property, 2),
+//         // params
+//         $params
+//       );
+//     }
+//   }
+// }
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  cursor: pointer;
+  width: 354px;
+  height: 48px;
+  border: 0px;
+  background: linear-gradient(
+    0deg,
+    #bd8430 -36698.48%,
+    #d78732 -34668.35%,
+    #d79d4a -33164.55%,
+    #c07d2a -31134.42%,
+    #bd8430 -29781%
+  );
+
+  box-shadow: -10px -10px 50px rgba(208, 173, 107, 0.1),
+    10px 10px 50px rgba(208, 173, 107, 0.1);
+  border-radius: 100px;
+}

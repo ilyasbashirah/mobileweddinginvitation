@@ -1,0 +1,64 @@
+@import "../../styles/scss/global/gap";
+@import "../../styles/scss/global/grid_align";
+@import "../../styles/scss/global/grid_justify";
+.section-width-1240 {
+  display: grid;
+}
+
+@mixin section-gap($map) {
+  @each $row-gap-name, $row-gap-selected in $map {
+    @if not map-has-key($map, $row-gap-name) {
+      &--#{$row-gap-name} {
+        row-gap: 0px;
+      }
+    } @else {
+      &--#{$row-gap-name} {
+        row-gap: $row-gap-selected;
+      }
+    }
+  }
+}
+
+@mixin section-align($map) {
+  @each $data-name, $data-selected in $map {
+    @if not map-has-key($map, $data-name) {
+      &--#{$data-name} {
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+    } @else {
+      &--#{$data-name} {
+        align-items: $data-selected;
+        align-content: $data-selected;
+      }
+    }
+  }
+}
+
+@mixin section-justify($map) {
+  @each $data-name, $data-selected in $map {
+    @if not map-has-key($map, $data-name) {
+      &--#{$data-name} {
+        justify-items: flex-start;
+        justify-content: flex-start;
+      }
+    } @else {
+      &--#{$data-name} {
+        justify-items: $data-selected;
+        justify-content: $data-selected;
+      }
+    }
+  }
+}
+
+.section-gap {
+  @include section-gap($gap);
+}
+
+.section-align {
+  @include section-align($grid-align);
+}
+
+.section-justify {
+  @include section-justify($grid-justify);
+}
