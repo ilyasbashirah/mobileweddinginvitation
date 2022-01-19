@@ -76,22 +76,24 @@ export default function BrideGroom(props: BrideGroomProps) {
         >
           {titleText}
         </Typography>
-        <Typography
-          variant={"body-2-medium"}
-          color={"onyx"}
-          family={"montserrat"}
-          align={"center"}
-        >
-          {quoteMeaningText}
-        </Typography>
-        <Typography
-          variant={"body-2-medium"}
-          color={"onyx"}
-          family={"montserrat"}
-          align={"center"}
-        >
-          {quoteSurahText}
-        </Typography>
+        <Section gap={24} align={"flex-start"} justify={"center"}>
+          <Typography
+            variant={"body-2-medium"}
+            color={"onyx"}
+            family={"montserrat"}
+            align={"center"}
+          >
+            {quoteMeaningText}
+          </Typography>
+          <Typography
+            variant={"body-2-medium"}
+            color={"onyx"}
+            family={"montserrat"}
+            align={"center"}
+          >
+            {quoteSurahText}
+          </Typography>
+        </Section>
 
         <div className={style["container-bride-photos"]}>
           <img

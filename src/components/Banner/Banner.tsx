@@ -26,7 +26,7 @@ export default function Banner({
       className={`${style["banner"]} ${style[`banner-justify--${justify}`]} ${
         style[`banner-align--${align}`]
       } ${style[`banner-height--${height}`]}`}
-      style={{ background: `url(${background})` }}
+      style={{ backgroundImage: `url(${background})` }}
     >
       {children}
     </div>

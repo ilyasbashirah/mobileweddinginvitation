@@ -8,6 +8,7 @@ import WeddingGift from "../features/success/weddinggift/WeddingGift";
 import Closing from "../features/success/closing/Closing";
 import Banner from "@/src/components/Banner";
 import Section from "@/src/components/Section";
+import Footer from "@/src/products/landing/features/success/footer";
 
 export interface ILandingPage {}
 
@@ -29,6 +30,7 @@ export default function LandingPage(props: ILandingPage) {
       <OurGallery />
       <WeddingGift />
       <Closing />
+      <Footer />
     </div>
   );
 }

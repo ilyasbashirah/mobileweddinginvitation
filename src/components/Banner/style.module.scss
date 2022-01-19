@@ -3,6 +3,8 @@
 @import "../../styles/scss/global/banner_height";
 .banner {
   background-size: cover;
+  background-position: center;
+  // background-size: 100% 50%;
   background-repeat: no-repeat;
   display: grid;
   row-gap: 32px;

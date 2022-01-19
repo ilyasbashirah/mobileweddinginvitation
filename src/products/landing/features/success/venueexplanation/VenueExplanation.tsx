@@ -57,9 +57,12 @@ export default function VenueExplanation(props: VenueExplanationProps) {
     <Card>
       <div className={style["container-venue-explanation"]}>
         <div>
-          {Object.keys(textDatas).map((key: any) => {
+          {Object.keys(textDatas).map((key: any, index: number) => {
             return (
-              <div className={style["container-list-info"]}>
+              <div
+                key={`container-list-info-${index}`}
+                className={style["container-list-info"]}
+              >
                 {Object.keys(textDatas[key]).map((keyAspect: any) => {
                   if (keyAspect !== "title") {
                     return (
