@@ -78,7 +78,7 @@
     "build:local": "cross-env WEDDING_ENV=localhost next build",
     "start": "next start",
     "serve": "next start -p 4501",
-    "build": "next build",
+    "build": "cross-env WEDDING_ENV=localhost next build",
     "check": "prettier --check src",
     "eslint:check": "eslint src/**",
     "lint:watch": "npm run check -- --watch",
