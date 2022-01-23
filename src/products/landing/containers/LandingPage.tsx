@@ -10,14 +10,23 @@ import Banner from "@/src/components/Banner";
 import Section from "@/src/components/Section";
 import Footer from "@/src/products/landing/features/success/footer";
 import MenuLanding from "@/src/products/landing/containers/menu_landing/MenuLanding";
+import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/payment_account_modal/PaymentAccountModal";
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
   const [state, setState] = useState({
     language: "EN",
+    modalKirimHadiah: false,
   });
   const handleSwitchLanguage = (lang: string) => {
     setState({ ...state, language: lang });
+  };
+
+  const handleKirimHadiah = () => {
+    setState({ ...state, modalKirimHadiah: true });
+  };
+  const handleCloseKirimHadiah = (condition: boolean) => {
+    setState({ ...state, modalKirimHadiah: condition });
   };
   return (
     <div>
@@ -38,12 +47,20 @@ export default function LandingPage(props: ILandingPage) {
         </Section>
       </Banner>
       <OurGallery language={state.language} />
-      <WeddingGift language={state.language} />
+      <WeddingGift
+        language={state.language}
+        handleSendGiftToParent={handleKirimHadiah}
+      />
       <Closing language={state.language} />
       <Footer />
 
       {/* menu landing */}
       <MenuLanding language={state.language} />
+
+      <PaymentAccountModal
+        open={state.modalKirimHadiah}
+        handleBatalKirimHadiah={handleCloseKirimHadiah}
+      />
     </div>
   );
 }

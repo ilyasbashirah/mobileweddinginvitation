@@ -2,13 +2,18 @@ import { useState, useEffect } from "react";
 import style from "./style.module.scss";
 import Banner from "@/src/components/Banner";
 import Typography from "@/src/components/Typography";
-import { useRouter } from "next/router";
 import Section from "@/src/components/Section";
 import Button from "@/src/components/Button";
 
 export interface WeddingGiftProps {}
 
-export default function WeddingGift({ language = "" }: { language?: string }) {
+export default function WeddingGift({
+  language = "",
+  handleSendGiftToParent,
+}: {
+  language?: string;
+  handleSendGiftToParent?: () => void;
+}) {
   const [state, setState] = useState({
     lang: "EN",
   });
@@ -39,6 +44,9 @@ export default function WeddingGift({ language = "" }: { language?: string }) {
   const description1Text: string = textDatas.description1[translate];
   const description2Text: string = textDatas.description2[translate];
   const textButton: string = textDatas.buttonKirim[translate];
+  const handleSendGift = () => {
+    handleSendGiftToParent();
+  };
   return (
     <Banner
       id={"wedding-gift"}
@@ -65,14 +73,14 @@ export default function WeddingGift({ language = "" }: { language?: string }) {
           {description1Text}
         </Typography>
         <Typography
-          variant={"body-1-medium"}
+          variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
           align={"center"}
         >
           {description2Text}
         </Typography>
-        <Button text={textButton} />
+        <Button text={textButton} onClick={handleSendGift} />
       </Section>
     </Banner>
   );

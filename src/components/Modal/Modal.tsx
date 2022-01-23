@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-// import { useOnClickOutside } from '@/src/';
-import style from './style.module.scss';
-import Backdrop from '../Backdrop';
+import React, { useEffect, useState } from "react";
+import style from "./style.module.scss";
+import Backdrop from "../Backdrop";
 
 export default function Modal({
   open = false,
@@ -12,27 +11,26 @@ export default function Modal({
   children?: React.ReactNode;
   handleOutside?: any;
 }) {
-  const ref = useRef(document.createElement('div'));
-  const [isModalOpen, setModalOpen] = useState(false);
-  // useOnClickOutside(ref, () => {
-  //   setModalOpen(false);
-  //   if (handleOutside) {
-  //     handleOutside(false);
-  //   }
-  // });
-
+  const [state, setState] = useState({
+    modal: false,
+  });
+  //   useOnClickOutside(ref, () => {
+  //     setModalOpen(false);
+  //     if (handleOutside) {
+  //       handleOutside(false);
+  //     }
+  //   });
   useEffect(() => {
-    setModalOpen(open);
-  }, [open]);
-
+    setState({ ...state, modal: open });
+  }, [open, state.modal]);
+  const handleClose = () => {
+    setState({ ...state, modal: false });
+    handleOutside();
+  };
   return (
     <>
-      <Backdrop open={isModalOpen}>
-        {isModalOpen && (
-          <div ref={ref} className={style.modal}>
-            {children}
-          </div>
-        )}
+      <Backdrop open={state.modal} handleCloseContent={handleClose}>
+        {state.modal && <div className={style.modal}>{children}</div>}
       </Backdrop>
     </>
   );

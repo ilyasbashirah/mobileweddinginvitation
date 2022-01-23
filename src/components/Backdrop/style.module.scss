@@ -4,15 +4,13 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: #333;
-  opacity: 0.75;
-  z-index: 1010;
+  background: #383838;
+  opacity: 0.8;
+  z-index: 9400;
   &-content {
     position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 1020;
+    // top: 50%;
+    // left: 50%;
+    z-index: 9450;
   }
 }
