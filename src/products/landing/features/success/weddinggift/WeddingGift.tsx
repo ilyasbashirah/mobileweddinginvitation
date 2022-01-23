@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import style from "./style.module.scss";
 import Banner from "@/src/components/Banner";
 import Typography from "@/src/components/Typography";
@@ -8,36 +8,40 @@ import Button from "@/src/components/Button";
 
 export interface WeddingGiftProps {}
 
-export default function WeddingGift(props: WeddingGiftProps) {
+export default function WeddingGift({ language = "" }: { language?: string }) {
+  const [state, setState] = useState({
+    lang: "EN",
+  });
+  useEffect(() => {
+    setState({ ...state, lang: language });
+  }, [state.lang, language]);
   const textDatas = {
     title: {
       en: "Wedding Gift",
-      ina: "Wedding Gift",
+      id: "Wedding Gift",
     },
     description1: {
       en: "For family and friends who would like to send cashless gift. We would be glad to receive it. ",
-      ina: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah cashless. Kami akan dengan senang hati menerimanya",
+      id: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah cashless. Kami akan dengan senang hati menerimanya",
     },
     description2: {
       en: "Tap the following button to send to us",
-      ina: "Silakan klik tombol berikut untuk mengirimkan",
+      id: "Silakan klik tombol berikut untuk mengirimkan",
     },
     buttonKirim: {
       en: "Send Gift",
-      ina: "Kirim Hadiah",
+      id: "Kirim Hadiah",
     },
   };
 
-  const router = useRouter();
-
-  const routePathname: string = router.pathname;
-  const translate = routePathname.includes("en") ? "en" : "ina";
+  const translate = state.lang.toLowerCase().includes("en") ? "en" : "id";
   const titleText: string = textDatas.title[translate];
   const description1Text: string = textDatas.description1[translate];
   const description2Text: string = textDatas.description2[translate];
-  const textButton: string = "Kirim Hadiah";
+  const textButton: string = textDatas.buttonKirim[translate];
   return (
     <Banner
+      id={"wedding-gift"}
       height={"wedding-gift"}
       align={"flex-start"}
       justify={"center"}

@@ -8,10 +8,12 @@ export type ButtonBaseProps = {
 export default function ButtonBase({
   children,
   text = "",
+  variant = "primary",
   onClick,
 }: {
   children?: JSX.Element;
   text?: string;
+  variant?: "primary" | "secondary";
   onClick?: () => void;
 }): JSX.Element {
   const handleClick = () => {
@@ -23,14 +25,18 @@ export default function ButtonBase({
       data-testid="button"
       type={"button"}
       onClick={() => handleClick()}
-      className={`${style.button} `}
+      className={`${style.button} ${
+        variant === "primary"
+          ? style["button--primary"]
+          : style["button--secondary"]
+      }`}
     >
       {children}
       <Typography
         family={"montserrat"}
         variant={"body-1-bold"}
         align={"center"}
-        color={"white"}
+        color={variant === "primary" ? "white" : "cooper"}
       >
         {text}
       </Typography>

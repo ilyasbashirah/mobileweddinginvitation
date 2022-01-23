@@ -12,7 +12,7 @@ export default function Footer(props: FooterProps) {
       <Typography
         family={"montserrat"}
         variant={"caption-1-semibold"}
-        color={"dark-liver"}
+        color={"cooper"}
         align={"center"}
       >
         {textFooter}

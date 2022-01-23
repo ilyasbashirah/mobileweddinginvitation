@@ -10,4 +10,5 @@ export type Color =
   | "anti-flash-white"
   | "lotion"
   | "light-gray"
-  | "white";
+  | "white"
+  | 'light-silver';

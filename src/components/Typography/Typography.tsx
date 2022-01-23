@@ -12,7 +12,8 @@ type Variant =
   | "body-2-bold"
   | "body-2-semibold"
   | "body-2-medium"
-  | "caption-1-semibold";
+  | "caption-1-semibold"
+  | "caption-1-bold";
 
 type Align = "left" | "right" | "center";
 const Typography = ({

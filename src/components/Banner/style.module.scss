@@ -4,7 +4,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  // background-size: 100% 50%;
+  grid-template-columns: 1fr;
   background-repeat: no-repeat;
   display: grid;
   row-gap: 32px;

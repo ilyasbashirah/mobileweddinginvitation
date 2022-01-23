@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import style from "./style.module.scss";
 import Banner from "@/src/components/Banner";
@@ -6,51 +6,55 @@ import Section from "@/src/components/Section";
 import Typography from "@/src/components/Typography";
 export interface BrideGroomProps {}
 
-export default function BrideGroom(props: BrideGroomProps) {
+export default function BrideGroom({ language = "EN" }: { language: string }) {
+  const [state, setState] = useState({
+    lang: "EN",
+  });
+  useEffect(() => {
+    setState({ ...state, lang: language });
+  }, [state.lang, language]);
+
   const titleDatas = {
     en: "Bride & Groom",
-    ina: "Mempelai",
+    id: "Mempelai",
   };
   const quoteDatas = {
     meaning: {
       en: "And of everything We have created pairs, that you may remember (the Grace of Allah).",
-      ina: "Dan dari segala sesuatu Kami ciptakan berpasang-pasangan, agar kamu mengingat (Rahmat Allah).",
+      id: "Dan dari segala sesuatu Kami ciptakan berpasang-pasangan, agar kamu mengingat (Rahmat Allah).",
     },
     surah: {
       en: "QS Adh-Dhariyat : 49",
-      ina: "QS Adh-Dhariyat : 49",
+      id: "QS Adh-Dhariyat : 49",
     },
   };
   const brideAndGroomDatas = {
     brideName: {
       en: "Yasmin Meidiana Syarif, S.T.",
-      ina: "Yasmin Meidiana Syarif, S.T.",
+      id: "Yasmin Meidiana Syarif, S.T.",
     },
     brideIdentity: {
       en: "The daughter of Mr. Aswin Gunther Sharif & Mrs. Sintya Liana Sofyan",
-      ina: "Putri dari Bapak Aswin Gunther Sharif, S.E., Ak. & Ibu Sintya Liana Sofyan, S.H., M.Kn.",
+      id: "Putri dari Bapak Aswin Gunther Sharif, S.E., Ak. & Ibu Sintya Liana Sofyan, S.H., M.Kn.",
     },
     brideInstagram: {
       en: "@yasminsyrf",
-      ina: "@yasminsyrf",
+      id: "@yasminsyrf",
     },
     groomName: {
       en: "Moh. Ilyas Bashirah Putra Arya, S.T.",
-      ina: "Moh. Ilyas Bashirah Putra Arya, S.T.",
+      id: "Moh. Ilyas Bashirah Putra Arya, S.T.",
     },
     groomIdentity: {
       en: "The son of Achmad Sunaryo & Mrs. Suntari",
-      ina: "Putra dari Bapak Achmad Suyono, S.Sos & Ibu Suntari",
+      id: "Putra dari Bapak Achmad Suyono, S.Sos & Ibu Suntari",
     },
     groomInstagram: {
       en: "@milyasbpa",
-      ina: "@milyasbpa",
+      id: "@milyasbpa",
     },
   };
-  const router = useRouter();
-
-  const routePathname: string = router.pathname;
-  const translate = routePathname.includes("en") ? "en" : "ina";
+  const translate = state.lang.toLowerCase().includes("en") ? "en" : "id";
   const titleText: string = titleDatas[translate];
   const quoteMeaningText: string = quoteDatas.meaning[translate];
   const quoteSurahText: string = quoteDatas.surah[translate];
@@ -62,6 +66,7 @@ export default function BrideGroom(props: BrideGroomProps) {
   return (
     // <div className={style["container-bride-and-groom"]}>
     <Banner
+      id={"bride-and-groom"}
       height={"bride-and-groom"}
       align={"flex-start"}
       justify={"center"}

@@ -1,14 +1,11 @@
-.container-counting {
-  background: url("/desktop/countingdown/countingdown_background.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 1024px;
-  min-height: 1024px;
+.container-counting-down {
   display: grid;
-  justify-content: center;
-  justify-items: center;
+  grid-template-columns: 1fr;
   align-items: center;
   align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
 }
 
 .box-tulisan {

@@ -12,6 +12,7 @@ export interface BannerProps {
     | "our-gallery"
     | "wedding-gift"
     | "closing";
+  id?: string;
 }
 
 export default function Banner({
@@ -20,9 +21,11 @@ export default function Banner({
   align = "center",
   justify = "center",
   height = "counting-down",
+  id = "banner",
 }: BannerProps) {
   return (
     <div
+      id={id}
       className={`${style["banner"]} ${style[`banner-justify--${justify}`]} ${
         style[`banner-align--${align}`]
       } ${style[`banner-height--${height}`]}`}
