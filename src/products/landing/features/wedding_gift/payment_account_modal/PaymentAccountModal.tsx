@@ -23,12 +23,19 @@ export default function PaymentAccountModal({
   }, [state.lang, language]);
   const textDatas = {
     title: {
-      id: "Choose one of the option below",
-      en: "Silakan pilih salah satu",
+      en: "Choose one of the option below",
+      id: "Silakan pilih salah satu",
+    },
+    copy: {
+      en: "Copy",
+      id: "Salin",
     },
     payment_method_options: {
       bank_account: {
-        title: "Bank Account",
+        title: {
+          en: "Bank Account",
+          id: "Akun Bank",
+        },
         datas: [
           {
             id: "BRI",
@@ -97,7 +104,11 @@ export default function PaymentAccountModal({
                 variant={"body-1-bold"}
                 color={"onyx"}
               >
-                {textDatas.payment_method_options.bank_account.title}
+                {
+                  textDatas.payment_method_options.bank_account.title[
+                    state.lang.toLowerCase()
+                  ]
+                }
               </Typography>
 
               <div className={style["container-bank-account-list"]}>
@@ -141,7 +152,7 @@ export default function PaymentAccountModal({
                           variant={"body-2-bold"}
                           color={"cooper"}
                         >
-                          {"Copy"}
+                          {textDatas.copy[state.lang.toLowerCase()]}
                         </Typography>
                       </div>
                       {/* end button copy */}
@@ -198,7 +209,7 @@ export default function PaymentAccountModal({
                         variant={"body-2-bold"}
                         color={"cooper"}
                       >
-                        {"Copy"}
+                        {textDatas.copy[state.lang.toLowerCase()]}
                       </Typography>
                     </div>
 
