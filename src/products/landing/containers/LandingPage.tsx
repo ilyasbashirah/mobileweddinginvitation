@@ -37,8 +37,8 @@ export default function LandingPage(props: ILandingPage) {
   };
 
   const handleOpenInvitation = () => {
-    new Audio(sound).loop = true;
     new Audio(sound).play();
+    new Audio(sound).loop = true;
 
     setState({ ...state, openInvitation: true });
   };
