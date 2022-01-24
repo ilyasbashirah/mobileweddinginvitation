@@ -102,7 +102,10 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
         </Typography>
 
         <div className={style["container-bride-photos"]}>
-          <div onClick={() => handleClickToInstagram("milyasbpa")}>
+          <div
+            className={style["container-bride-photos"]}
+            onClick={() => handleClickToInstagram("milyasbpa")}
+          >
             <img
               className={style["image-bride-and-groom"]}
               src={"/desktop/brideandgroom/brideandgroom_yasmin.png"}
@@ -129,7 +132,10 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
         </div>
 
         <div className={style["container-groom-photos"]}>
-          <div onClick={() => handleClickToInstagram("milyasbpa")}>
+          <div
+            className={style["container-groom-photos"]}
+            onClick={() => handleClickToInstagram("milyasbpa")}
+          >
             <img
               className={style["image-bride-and-groom"]}
               src={"/desktop/brideandgroom/brideandgroom_bas.png"}
