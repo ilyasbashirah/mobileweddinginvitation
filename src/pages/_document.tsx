@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          
         </Head>
         <body>
           <Main />

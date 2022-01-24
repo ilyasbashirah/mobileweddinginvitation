@@ -20,6 +20,7 @@ const Home: NextPage = () => {
       <>
         <Head>
           <title>{title}</title>
+          
         </Head>
         <LandingPage />
       </>

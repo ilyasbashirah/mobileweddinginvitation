@@ -19,50 +19,53 @@ export default function VenueExplanation({
     setState({ ...state, lang: language });
   }, [state.lang, language]);
   const textDatas = {
-    akad: {
-      title: {
-        en: "Wedding Ceremony",
-        id: "Akad Nikah",
-        icon: "",
+    datas: {
+      akad: {
+        title: {
+          en: "Wedding Ceremony",
+          id: "Akad Nikah",
+          icon: "",
+        },
+        hotel: {
+          en: "InterContinental Bandung Dago Pakar Hotel",
+          id: "Hotel InterContinental Bandung Dago Pakar",
+          icon: "venue_hotel.svg",
+        },
+        time: {
+          en: "07.30 - 09.30 WIB",
+          id: "07.30 - 09.30 WIB",
+          icon: "venue_clock.svg",
+        },
+        address: {
+          en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+          id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+          icon: "venue_point.svg",
+        },
       },
-      hotel: {
-        en: "InterContinental Bandung Dago Pakar Hotel",
-        id: "Hotel InterContinental Bandung Dago Pakar",
-        icon: "venue_hotel.svg",
-      },
-      time: {
-        en: "07.30 - 09.30 WIB",
-        id: "07.30 - 09.30 WIB",
-        icon: "venue_clock.svg",
-      },
-      address: {
-        en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-        id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-        icon: "venue_point.svg",
+      resepsi: {
+        title: {
+          en: "Wedding Reception",
+          id: "Resepsi",
+          icon: "",
+        },
+        hotel: {
+          en: "InterContinental Bandung Dago Pakar Hotel",
+          id: "Hotel InterContinental Bandung Dago Pakar",
+          icon: "venue_hotel.svg",
+        },
+        time: {
+          en: "10.30 - 13.30 WIB",
+          id: "10.30 - 13.30 WIB",
+          icon: "venue_clock.svg",
+        },
+        address: {
+          en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+          id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+          icon: "venue_point.svg",
+        },
       },
     },
-    resepsi: {
-      title: {
-        en: "Wedding Reception",
-        id: "Resepsi",
-        icon: "",
-      },
-      hotel: {
-        en: "InterContinental Bandung Dago Pakar Hotel",
-        id: "Hotel InterContinental Bandung Dago Pakar",
-        icon: "venue_hotel.svg",
-      },
-      time: {
-        en: "10.30 - 13.30 WIB",
-        id: "10.30 - 13.30 WIB",
-        icon: "venue_clock.svg",
-      },
-      address: {
-        en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-        id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-        icon: "venue_point.svg",
-      },
-    },
+
     buttonText: {
       maps: {
         en: "Open Maps",
@@ -90,13 +93,13 @@ export default function VenueExplanation({
     <Card>
       <div className={style["container-venue-explanation"]}>
         <div>
-          {Object.keys(textDatas).map((key: any, index: number) => {
+          {Object.keys(textDatas.datas).map((key: any, index: number) => {
             return (
               <div
                 key={`container-list-info-${index}`}
                 className={style["container-list-info"]}
               >
-                {Object.keys(textDatas[key]).map((keyAspect: any) => {
+                {Object.keys(textDatas.datas[key]).map((keyAspect: any) => {
                   if (keyAspect !== "title") {
                     return (
                       <div
@@ -104,14 +107,18 @@ export default function VenueExplanation({
                         className={style["venue-list-explanation"]}
                       >
                         <img
-                          src={`/desktop/venueandprotocol/venue/icons/${textDatas[key][keyAspect]["icon"]}`}
+                          src={`/desktop/venueandprotocol/venue/icons/${textDatas.datas[key][keyAspect]["icon"]}`}
                         />
                         <Typography
                           family={"montserrat"}
                           variant={"body-2-medium"}
                           color={"cooper"}
                         >
-                          {textDatas[key][keyAspect][state.lang.toLowerCase()]}
+                          {
+                            textDatas.datas[key][keyAspect][
+                              state.lang.toLowerCase()
+                            ]
+                          }
                         </Typography>
                       </div>
                     );
@@ -123,7 +130,11 @@ export default function VenueExplanation({
                         variant={"body-1-bold"}
                         color={"cooper"}
                       >
-                        {textDatas[key]["title"][state.lang.toLowerCase()]}
+                        {
+                          textDatas.datas[key]["title"][
+                            state.lang.toLowerCase()
+                          ]
+                        }
                       </Typography>
                     );
                   }

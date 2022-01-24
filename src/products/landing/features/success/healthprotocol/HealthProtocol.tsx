@@ -70,7 +70,7 @@ export default function HealthProtocol({
       <div className={style["container-box-health-protocol"]}>
         {Object.keys(textDatas.aspect).map((item: any) => {
           return (
-            <div className={style["box-health-protocol"]}>
+            <div key={`box-health-protocol-${item}`} className={style["box-health-protocol"]}>
               <img src={textDatas.aspect[item]["img"]} />
               <Typography
                 variant={"body-2-semibold"}

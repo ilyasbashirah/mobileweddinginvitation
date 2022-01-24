@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Counting from "@/src/products/landing/containers/counting_down";
 import BrideGroom from "@/src/products/landing/features/success/brideandgroom";
 import MapsLocation from "@/src/products/landing/features/success/mapslocation";
@@ -14,10 +14,16 @@ import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/pa
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
+  const sound = "https://images.bribrain.com/bas/wedding-audio.mp3";
   const [state, setState] = useState({
     language: "EN",
     modalKirimHadiah: false,
+    audio: false,
+    // wedding_audio: new Audio(
+    //   "https://images.bribrain.com/bas/wedding-audio.mp3"
+    // ),
   });
+
   const handleSwitchLanguage = (lang: string) => {
     setState({ ...state, language: lang });
   };
@@ -28,8 +34,36 @@ export default function LandingPage(props: ILandingPage) {
   const handleCloseKirimHadiah = (condition: boolean) => {
     setState({ ...state, modalKirimHadiah: condition });
   };
+  // const Playit = () => {
+  //   state.wedding_audio.play();
+  // };
+  const handleOnClick = () => {
+    console.log("ini kepanggil ga");
+    setState({ ...state, audio: true });
+
+    // new Audio(sound).play();
+  };
+  useEffect(() => {
+    if ("Audio" in window) {
+      const apa = window.document.getElementById("test");
+      console.log(apa);
+      apa.addEventListener("click", () => {
+        console.log("test");
+      });
+    }
+  }, [window]);
+  useEffect(() => {
+    if (state.audio === true) {
+      new Audio(sound).play();
+    }
+  }, [state.audio]);
+
   return (
-    <div>
+    <div id={"test"} onClick={handleOnClick}>
+      {/* <button id={"audio"} onClick={handleOnClick} /> */}
+      <audio className="audio-element">
+        <source src={sound} />
+      </audio>
       <Counting
         language={state.language}
         switchLanguageTo={handleSwitchLanguage}
