@@ -26,8 +26,8 @@ export default function WeddingGift({
       id: "Hadiah Pernikahan",
     },
     description1: {
-      en: "For family and friends who would like to send gift. We would be glad to receive it",
-      id: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah. Kami akan dengan senang hati menerimanya",
+      en: "For family and friends who would like to send gift. We would be glad to receive it.",
+      id: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah. Kami akan dengan senang hati menerimanya.",
     },
     description2: {
       en: "Tap the following button to send to us",
