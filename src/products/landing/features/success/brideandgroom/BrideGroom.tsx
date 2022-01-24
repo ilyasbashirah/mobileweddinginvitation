@@ -62,6 +62,9 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
   const brideIdentityText: string = brideAndGroomDatas.brideIdentity[translate];
   const groomNameText: string = brideAndGroomDatas.groomName[translate];
   const groomIdentityText: string = brideAndGroomDatas.groomIdentity[translate];
+  const handleClickToInstagram = (akun: string) => {
+    window.location.replace(`https://instagram.com/${akun}`);
+  };
   return (
     // <div className={style["container-bride-and-groom"]}>
     <Banner
@@ -99,10 +102,12 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
         </Typography>
 
         <div className={style["container-bride-photos"]}>
-          <img
-            className={style["image-bride-and-groom"]}
-            src={"/desktop/brideandgroom/brideandgroom_yasmin.png"}
-          />
+          <div onClick={() => handleClickToInstagram("milyasbpa")}>
+            <img
+              className={style["image-bride-and-groom"]}
+              src={"/desktop/brideandgroom/brideandgroom_yasmin.png"}
+            />
+          </div>
           <div className={style["container-identity"]}>
             <Typography
               variant={"subtitle-2-bold"}
@@ -124,10 +129,13 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
         </div>
 
         <div className={style["container-groom-photos"]}>
-          <img
-            className={style["image-bride-and-groom"]}
-            src={"/desktop/brideandgroom/brideandgroom_bas.png"}
-          />
+          <div onClick={() => handleClickToInstagram("milyasbpa")}>
+            <img
+              className={style["image-bride-and-groom"]}
+              src={"/desktop/brideandgroom/brideandgroom_bas.png"}
+            />
+          </div>
+
           <div className={style["container-identity"]}>
             <Typography
               variant={"subtitle-2-bold"}

@@ -1,9 +1,6 @@
 .container-bride-and-groom {
   background: url("/desktop/brideandgroom/brideandgroom_background.svg");
   background-size: cover;
-  //   background-repeat: no-repeat;
-  //   height: 1534px;
-  // max-width: 100%;
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -47,7 +44,8 @@
   column-gap: 44px;
   row-gap: 24px;
 }
-.image-bride-and-groom{
+.image-bride-and-groom {
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
 }
