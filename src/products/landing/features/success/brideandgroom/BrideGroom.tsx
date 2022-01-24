@@ -46,7 +46,7 @@ export default function BrideGroom({ language = "EN" }: { language: string }) {
       id: "Moh. Ilyas Bashirah Putra Arya, S.T.",
     },
     groomIdentity: {
-      en: "The son of Achmad Sunaryo & Mrs. Suntari",
+      en: "The son of Achmad Suyono & Mrs. Suntari",
       id: "Putra dari Bapak Achmad Suyono, S.Sos & Ibu Suntari",
     },
     groomInstagram: {
