@@ -7,13 +7,28 @@ import Section from "@/src/components/Section";
 
 export interface OurGalleryProps {}
 
-export default function OurGallery({ language = "ID" }: { language?: string }) {
+export default function OurGallery({
+  language = "ID",
+  seeMoreGallery = false,
+  seeMoreDispatch,
+}: {
+  language?: string;
+  seeMore?: boolean;
+  seeMoreDispatch?: () => void;
+  seeMoreGallery?: boolean;
+}) {
   const [state, setState] = useState({
     lang: "ID",
+    seeMore: false,
   });
+
   useEffect(() => {
     setState({ ...state, lang: language });
   }, [state.lang, language]);
+  useEffect(() => {
+    setState({ ...state, seeMore: seeMoreGallery });
+  }, [state.seeMore, seeMoreGallery]);
+
   const textDatas = {
     title: {
       en: "Our Gallery",
@@ -32,6 +47,9 @@ export default function OurGallery({ language = "ID" }: { language?: string }) {
   const translate = state.lang.toLowerCase().includes("en") ? "en" : "id";
   const titleText: string = textDatas.title[translate];
   const descriptionText: string = textDatas.description[translate];
+  const handleSeeMore = () => {
+    seeMoreDispatch();
+  };
   return (
     <Banner
       id={"our-gallery"}
@@ -95,6 +113,7 @@ export default function OurGallery({ language = "ID" }: { language?: string }) {
               style={{
                 backgroundImage: `url("/desktop/gallery/photos/photos_right_2.png")`,
               }}
+              onClick={handleSeeMore}
             >
               <Typography
                 variant={"body-1-semibold"}

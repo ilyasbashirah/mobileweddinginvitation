@@ -5,10 +5,12 @@ import Backdrop from "../Backdrop";
 export default function Modal({
   open = false,
   children,
+  fullWidth = false,
   handleOutside,
 }: {
   open?: boolean;
   children?: React.ReactNode;
+  fullWidth?: boolean;
   handleOutside?: any;
 }) {
   const [state, setState] = useState({
@@ -30,7 +32,15 @@ export default function Modal({
   return (
     <>
       <Backdrop open={state.modal} handleCloseContent={handleClose}>
-        {state.modal && <div className={style.modal}>{children}</div>}
+        {state.modal && (
+          <div
+            className={`${style.modal} ${
+              fullWidth && style["modal--fullwidth"]
+            }`}
+          >
+            {children}
+          </div>
+        )}
       </Backdrop>
     </>
   );

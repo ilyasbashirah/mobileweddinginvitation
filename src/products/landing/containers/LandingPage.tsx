@@ -12,7 +12,7 @@ import Footer from "@/src/products/landing/features/success/footer";
 import MenuLanding from "@/src/products/landing/containers/menu_landing/MenuLanding";
 import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/payment_account_modal/PaymentAccountModal";
 import OpenInvitation from "@/src/products/landing/containers/open_invitation";
-
+import CarouselModal from "../features/our_gallery/carousel_modal/CarouselModal";
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
@@ -21,6 +21,7 @@ export default function LandingPage(props: ILandingPage) {
     language: "ID",
     modalKirimHadiah: false,
     openInvitation: false,
+    modalGallery: false,
   });
 
   const handleSwitchLanguage = (lang: string) => {
@@ -39,6 +40,12 @@ export default function LandingPage(props: ILandingPage) {
     setState({ ...state, openInvitation: true });
   };
 
+  const handleSeeMore = () => {
+    setState({ ...state, modalGallery: true });
+  };
+  const handleCloseModalAction = () => {
+    setState({ ...state, modalGallery: false });
+  };
   return (
     <div>
       {state.openInvitation ? (
@@ -61,7 +68,11 @@ export default function LandingPage(props: ILandingPage) {
               <HealthProtocol language={state.language} />
             </Section>
           </Banner>
-          <OurGallery language={state.language} />
+          <OurGallery
+            language={state.language}
+            seeMore={state.modalGallery}
+            seeMoreDispatch={handleSeeMore}
+          />
           <WeddingGift
             language={state.language}
             handleSendGiftToParent={handleKirimHadiah}
@@ -77,6 +88,12 @@ export default function LandingPage(props: ILandingPage) {
             language={state.language}
             handleBatalKirimHadiah={handleCloseKirimHadiah}
           />
+          {state.modalGallery && (
+            <CarouselModal
+              closeModalAction={handleCloseModalAction}
+              openModalGallery={state.modalGallery}
+            />
+          )}
         </>
       ) : (
         <>

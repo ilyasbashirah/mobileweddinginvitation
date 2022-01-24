@@ -1,9 +1,12 @@
 .modal {
   position: fixed;
   bottom:0px;
-  // transform: translate(0%, -50%);
+  top:0px;
   left: 0px;
   right: 0px;
   border-radius: 8px;
   z-index: 9500;
+  &--fullwidth{
+    top:0px;
+  }
 }

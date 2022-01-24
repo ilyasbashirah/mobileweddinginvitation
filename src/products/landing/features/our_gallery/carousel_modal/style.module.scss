@@ -1,0 +1,33 @@
+.header-carousel-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  padding: 16px;
+  z-index: 9800;
+}
+
+.container-gallery-photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100%;
+  .icon-arrow-left {
+    z-index: 9700;
+    position: fixed;
+    top: calc(50% - 20px);
+    left: 0px;
+    bottom: 0px;
+  }
+  .icon-arrow-right {
+    z-index: 9700;
+    position: fixed;
+    top: calc(50% - 20px);
+    right: 0px;
+    bottom: 0px;
+  }
+}
