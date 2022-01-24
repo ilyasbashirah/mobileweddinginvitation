@@ -16,14 +16,14 @@ export default function CarouselModal({
     active: 1,
     openModal: false,
   });
-  const maxState = 2;
-  const minState = 0;
+  const maxState = 15;
+  const minState = 1;
   const handleClickPrevious = (active: number) => {
     let final: number;
-    if (active > minState + 1) {
+    if (active > minState) {
       final = active - 1;
     }
-    if (active <= 1) {
+    if (active <= minState) {
       final = 2;
     }
     setState({ ...state, active: final });
@@ -72,7 +72,6 @@ export default function CarouselModal({
         </div>
         <div
           className={style["container-gallery-photos"]}
-          onClick={handleCloseModal}
         >
           <div
             className={style["icon-arrow-right"]}
