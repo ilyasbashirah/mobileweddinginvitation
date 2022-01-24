@@ -7,14 +7,20 @@ export interface PaymentAccountModalProps {}
 
 export default function PaymentAccountModal({
   open = false,
+  language = "ID",
   handleBatalKirimHadiah,
 }: {
   open?: boolean;
+  language?: string;
   handleBatalKirimHadiah?: (condition: boolean) => void;
 }) {
   const [state, setState] = useState({
     modal: true,
+    lang: "ID",
   });
+  useEffect(() => {
+    setState({ ...state, lang: language });
+  }, [state.lang, language]);
   const textDatas = {
     title: {
       id: "Choose one of the option below",
@@ -78,7 +84,7 @@ export default function PaymentAccountModal({
               color={"onyx"}
               align={"center"}
             >
-              {textDatas.title["en"]}
+              {textDatas.title[state.lang.toLowerCase()]}
             </Typography>
           </div>
 

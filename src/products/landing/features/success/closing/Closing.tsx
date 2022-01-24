@@ -5,10 +5,10 @@ import Banner from "@/src/components/Banner";
 
 export interface ClosingProps {}
 
-export default function Closing({ language = "EN" }: { language?: string }) {
+export default function Closing({ language = "ID" }: { language?: string }) {
   const [state, setState] = useState({
     active: "",
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
@@ -20,8 +20,8 @@ export default function Closing({ language = "EN" }: { language?: string }) {
         id: "Pernikahan kami tidak akan lengkap tanpa dukungan keluarga dan teman-teman kami.",
       },
       text2: {
-        en: "Thank you for sharing our day!",
-        id: "Terima kasih telah berbagi hari kami!",
+        en: "Thank you for sharing happiness with us!",
+        id: "Terima kasih telah berbagi kebahagiaan bersama kami!",
       },
       text3: {
         en: "With Love,",
@@ -37,30 +37,32 @@ export default function Closing({ language = "EN" }: { language?: string }) {
   return (
     <Banner
       height={"closing"}
-      align={'flex-end'}
+      align={"flex-end"}
       background={"/desktop/closing/closing_background.png"}
     >
-      {Object.keys(textDatas.datas).map((item: any, index: number) => {
-        return (
-          <Typography
-            key={`typography-${index}`}
-            family={"montserrat"}
-            variant={"body-2-medium"}
-            color={"white"}
-            align={"center"}
-          >
-            {textDatas.datas[item][state.lang.toLowerCase()]}
-          </Typography>
-        );
-      })}
-      <Typography
-        family={"montserrat"}
-        variant={"subtitle-2-bold"}
-        color={"white"}
-        align={"center"}
-      >
-        {textDatas.from[state.lang.toLowerCase()]}
-      </Typography>
+      <div className={style["section-text-description"]}>
+        {Object.keys(textDatas.datas).map((item: any, index: number) => {
+          return (
+            <Typography
+              key={`typography-${index}`}
+              family={"montserrat"}
+              variant={"body-2-medium"}
+              color={"white"}
+              align={"center"}
+            >
+              {textDatas.datas[item][state.lang.toLowerCase()]}
+            </Typography>
+          );
+        })}
+        <Typography
+          family={"montserrat"}
+          variant={"subtitle-2-bold"}
+          color={"white"}
+          align={"center"}
+        >
+          {textDatas.from[state.lang.toLowerCase()]}
+        </Typography>
+      </div>
     </Banner>
   );
 }

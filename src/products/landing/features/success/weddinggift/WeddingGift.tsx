@@ -8,14 +8,14 @@ import Button from "@/src/components/Button";
 export interface WeddingGiftProps {}
 
 export default function WeddingGift({
-  language = "",
+  language = "ID",
   handleSendGiftToParent,
 }: {
   language?: string;
   handleSendGiftToParent?: () => void;
 }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
@@ -23,15 +23,15 @@ export default function WeddingGift({
   const textDatas = {
     title: {
       en: "Wedding Gift",
-      id: "Wedding Gift",
+      id: "Hadiah Pernikahan",
     },
     description1: {
       en: "For family and friends who would like to send cashless gift. We would be glad to receive it. ",
-      id: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah cashless. Kami akan dengan senang hati menerimanya",
+      id: "Tanpa mengurangi rasa hormat, apabila keluarga dan teman-teman ingin memberikan hadiah. Kami akan dengan senang hati menerimanya",
     },
     description2: {
       en: "Tap the following button to send to us",
-      id: "Silakan klik tombol berikut untuk mengirimkan",
+      id: "Silakan klik tombol berikut untuk mengirimkan hadiah",
     },
     buttonKirim: {
       en: "Send Gift",
@@ -56,30 +56,33 @@ export default function WeddingGift({
       background={"/desktop/weddinggift/weddinggift_background.svg"}
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
-        <Typography
-          variant={"heading-1-regular"}
-          color={"cooper"}
-          family={"greatvibes"}
-          align={"center"}
-        >
-          {titleText}
-        </Typography>
-        <Typography
-          variant={"body-2-medium"}
-          color={"onyx"}
-          family={"montserrat"}
-          align={"center"}
-        >
-          {description1Text}
-        </Typography>
-        <Typography
-          variant={"body-2-medium"}
-          color={"onyx"}
-          family={"montserrat"}
-          align={"center"}
-        >
-          {description2Text}
-        </Typography>
+        <div className={style["section-text-wedding-gift"]}>
+          <Typography
+            variant={"heading-1-regular"}
+            color={"cooper"}
+            family={"greatvibes"}
+            align={"center"}
+          >
+            {titleText}
+          </Typography>
+          <Typography
+            variant={"body-2-medium"}
+            color={"onyx"}
+            family={"montserrat"}
+            align={"center"}
+          >
+            {description1Text}
+          </Typography>
+          <Typography
+            variant={"body-2-medium"}
+            color={"onyx"}
+            family={"montserrat"}
+            align={"center"}
+          >
+            {description2Text}
+          </Typography>
+        </div>
+
         <Button text={textButton} onClick={handleSendGift} />
       </Section>
     </Banner>

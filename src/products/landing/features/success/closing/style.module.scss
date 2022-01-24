@@ -1,0 +1,9 @@
+.section-text-description {
+  display: grid;
+  align-items: flex-end;
+  align-content: flex-end;
+  row-gap: 16px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+}

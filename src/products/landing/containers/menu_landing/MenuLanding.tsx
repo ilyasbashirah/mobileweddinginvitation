@@ -4,13 +4,13 @@ import Typography from "@/src/components/Typography";
 export interface MenuLandingProps {}
 
 export default function MenuLanding({
-  language = "EN",
+  language = "ID",
 }: {
   language?: string;
 }) {
   const [state, setState] = useState({
     active: "bride-and-groom",
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });

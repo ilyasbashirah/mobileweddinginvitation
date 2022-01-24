@@ -27,6 +27,15 @@
   row-gap: 12px;
 }
 
+.container-box-list-info {
+  display: grid;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  row-gap: 24px;
+}
+
 .container-venue-explanation {
   display: grid;
   align-items: flex-start;

@@ -6,12 +6,12 @@ import { useRouter } from "next/router";
 export interface HealthProtocolProps {}
 
 export default function HealthProtocol({
-  language = "EN",
+  language = "ID",
 }: {
   language?: string;
 }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });

@@ -14,6 +14,7 @@ export interface BannerProps {
     | "wedding-gift"
     | "closing";
   id?: string;
+  slideTop?: boolean;
 }
 
 export default function Banner({
@@ -23,13 +24,16 @@ export default function Banner({
   justify = "center",
   height = "counting-down",
   id = "banner",
+  slideTop = false,
 }: BannerProps) {
   return (
     <div
       id={id}
       className={`${style["banner"]} ${style[`banner-justify--${justify}`]} ${
         style[`banner-align--${align}`]
-      } ${style[`banner-height--${height}`]}`}
+      } ${style[`banner-height--${height}`]} ${
+        slideTop && style[`banner--slide-out-top`]
+      }`}
       style={{ backgroundImage: `url(${background})` }}
     >
       {children}

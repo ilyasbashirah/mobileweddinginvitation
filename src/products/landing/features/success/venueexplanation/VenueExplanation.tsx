@@ -8,12 +8,12 @@ import Button from "@/src/components/Button";
 export interface VenueExplanationProps {}
 
 export default function VenueExplanation({
-  language = "EN",
+  language = "ID",
 }: {
   language?: string;
 }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
@@ -26,21 +26,23 @@ export default function VenueExplanation({
           id: "Akad Nikah",
           icon: "",
         },
-        hotel: {
-          en: "InterContinental Bandung Dago Pakar Hotel",
-          id: "Hotel InterContinental Bandung Dago Pakar",
-          icon: "venue_hotel.svg",
-        },
-        time: {
-          en: "07.30 - 09.30 WIB",
-          id: "07.30 - 09.30 WIB",
-          icon: "venue_clock.svg",
-        },
-        address: {
-          en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-          id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-          icon: "venue_point.svg",
-        },
+        datas: [
+          {
+            en: "InterContinental Bandung Dago Pakar Hotel",
+            id: "Hotel InterContinental Bandung Dago Pakar",
+            icon: "venue_hotel.svg",
+          },
+          {
+            en: "08.00 - 09.30 WIB",
+            id: "08.00 - 09.30 WIB",
+            icon: "venue_clock.svg",
+          },
+          {
+            en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+            id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+            icon: "venue_point.svg",
+          },
+        ],
       },
       resepsi: {
         title: {
@@ -48,21 +50,23 @@ export default function VenueExplanation({
           id: "Resepsi",
           icon: "",
         },
-        hotel: {
-          en: "InterContinental Bandung Dago Pakar Hotel",
-          id: "Hotel InterContinental Bandung Dago Pakar",
-          icon: "venue_hotel.svg",
-        },
-        time: {
-          en: "10.30 - 13.30 WIB",
-          id: "10.30 - 13.30 WIB",
-          icon: "venue_clock.svg",
-        },
-        address: {
-          en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-          id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
-          icon: "venue_point.svg",
-        },
+        datas: [
+          {
+            en: "InterContinental Bandung Dago Pakar Hotel",
+            id: "Hotel InterContinental Bandung Dago Pakar",
+            icon: "venue_hotel.svg",
+          },
+          {
+            en: "10.30 - 13.30 WIB",
+            id: "10.30 - 13.30 WIB",
+            icon: "venue_clock.svg",
+          },
+          {
+            en: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+            id: "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Kota Bandung",
+            icon: "venue_point.svg",
+          },
+        ],
       },
     },
 
@@ -92,56 +96,64 @@ export default function VenueExplanation({
   return (
     <Card>
       <div className={style["container-venue-explanation"]}>
-        <div>
-          {Object.keys(textDatas.datas).map((key: any, index: number) => {
-            return (
-              <div
-                key={`container-list-info-${index}`}
-                className={style["container-list-info"]}
-              >
-                {Object.keys(textDatas.datas[key]).map((keyAspect: any) => {
-                  if (keyAspect !== "title") {
-                    return (
-                      <div
-                        key={`venue-explanation-${keyAspect}`}
-                        className={style["venue-list-explanation"]}
-                      >
-                        <img
-                          src={`/desktop/venueandprotocol/venue/icons/${textDatas.datas[key][keyAspect]["icon"]}`}
-                        />
-                        <Typography
-                          family={"montserrat"}
-                          variant={"body-2-medium"}
-                          color={"cooper"}
-                        >
-                          {
-                            textDatas.datas[key][keyAspect][
-                              state.lang.toLowerCase()
-                            ]
-                          }
-                        </Typography>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <Typography
-                        key={`venue-explanation-${key}`}
-                        family={"montserrat"}
-                        variant={"body-1-bold"}
-                        color={"cooper"}
-                      >
-                        {
-                          textDatas.datas[key]["title"][
-                            state.lang.toLowerCase()
-                          ]
-                        }
-                      </Typography>
-                    );
-                  }
-                })}
-              </div>
-            );
-          })}
+        <div className={style["container-box-list-info"]}>
+          <div className={style["container-list-info"]}>
+            <Typography
+              family={"montserrat"}
+              variant={"body-1-bold"}
+              color={"cooper"}
+            >
+              {textDatas.datas["akad"]["title"][state.lang.toLowerCase()]}
+            </Typography>
+            {textDatas.datas.akad.datas.map((item: any, index) => {
+              return (
+                <div
+                  key={`venue-explanation-${index}`}
+                  className={style["venue-list-explanation"]}
+                >
+                  <img
+                    src={`/desktop/venueandprotocol/venue/icons/${item["icon"]}`}
+                  />
+                  <Typography
+                    family={"montserrat"}
+                    variant={"body-2-medium"}
+                    color={"cooper"}
+                  >
+                    {item[state.lang.toLowerCase()]}
+                  </Typography>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className={style["container-list-info"]}>
+            <Typography
+              family={"montserrat"}
+              variant={"body-1-bold"}
+              color={"cooper"}
+            >
+              {textDatas.datas["resepsi"]["title"][state.lang.toLowerCase()]}
+            </Typography>
+            {textDatas.datas.resepsi.datas.map((item: any, index) => {
+              return (
+                <div
+                  key={`venue-explanation-${index}`}
+                  className={style["venue-list-explanation"]}
+                >
+                  <img
+                    src={`/desktop/venueandprotocol/venue/icons/${item["icon"]}`}
+                  />
+                  <Typography
+                    family={"montserrat"}
+                    variant={"body-2-medium"}
+                    color={"cooper"}
+                  >
+                    {item[state.lang.toLowerCase()]}
+                  </Typography>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className={style["section-button"]}>

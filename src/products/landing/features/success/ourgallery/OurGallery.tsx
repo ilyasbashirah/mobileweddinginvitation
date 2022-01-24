@@ -7,9 +7,9 @@ import Section from "@/src/components/Section";
 
 export interface OurGalleryProps {}
 
-export default function OurGallery({ language = "EN" }: { language?: string }) {
+export default function OurGallery({ language = "ID" }: { language?: string }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
@@ -22,6 +22,10 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
     description: {
       en: "We would like to share our beautiful memories to you",
       id: "Kami ingin membagikan momen bahagia yang tidak pernah terlupakan",
+    },
+    moreText: {
+      en: "More",
+      id: "Lihat Selengkapnya",
     },
   };
 
@@ -36,14 +40,17 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
       background={"/desktop/gallery/gallery_background.svg"}
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
-        <Typography
-          variant={"heading-1-regular"}
-          color={"cooper"}
-          family={"greatvibes"}
-          align={"center"}
-        >
-          {titleText}
-        </Typography>
+        <div className={style["padding-title-our-gallery"]}>
+          <Typography
+            variant={"heading-1-regular"}
+            color={"cooper"}
+            family={"greatvibes"}
+            align={"center"}
+          >
+            {titleText}
+          </Typography>
+        </div>
+
         <Typography
           variant={"body-2-medium"}
           color={"onyx"}
@@ -95,7 +102,7 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
                 family={"montserrat"}
                 align={"center"}
               >
-                {"Lihat Selengkapnya"}
+                {textDatas.moreText[state.lang.toLowerCase()]}
               </Typography>
             </div>
           </div>

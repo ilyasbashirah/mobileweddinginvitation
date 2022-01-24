@@ -9,7 +9,7 @@ import style from "./style.module.scss";
 export interface CountingProps {}
 
 export default function Counting({
-  language = "en",
+  language = "ID",
   switchLanguageTo,
 }: {
   language?: string;
@@ -59,10 +59,6 @@ export default function Counting({
       menit: number;
       detik: number;
     };
-    // hari: number;
-    // jam: number;
-    // menit: number;
-    // detik: number;
     lang: string;
   };
 
@@ -76,7 +72,7 @@ export default function Counting({
       detik: Math.floor((difference / 1000) % 60),
     },
 
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     const interval = setTimeout(() => {
@@ -98,7 +94,7 @@ export default function Counting({
       });
     }, 1000);
     return () => clearTimeout(interval);
-  }, []);
+  }, [state.time]);
   const nameText: string = state.lang.toLowerCase().includes("en")
     ? nameDatas.en
     : nameDatas.id;

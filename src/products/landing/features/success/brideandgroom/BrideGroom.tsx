@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import style from "./style.module.scss";
 import Banner from "@/src/components/Banner";
 import Section from "@/src/components/Section";
 import Typography from "@/src/components/Typography";
 export interface BrideGroomProps {}
 
-export default function BrideGroom({ language = "EN" }: { language: string }) {
+export default function BrideGroom({ language = "ID" }: { language: string }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });

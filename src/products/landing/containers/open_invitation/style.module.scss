@@ -17,7 +17,7 @@
   display: grid;
   align-content: center;
   align-items: center;
-  grid-template-columns: auto 1px auto;
+  grid-template-columns: 1fr;
   width: 100%;
   column-gap: 16px;
   .box-list {
@@ -28,10 +28,5 @@
     align-content: center;
     justify-content: center;
     justify-items: center;
-  }
-  .divider {
-    height: 20px;
-    width: 1px;
-    background-color: #383838;
   }
 }

@@ -18,7 +18,7 @@ export interface ILandingPage {}
 export default function LandingPage(props: ILandingPage) {
   const sound = "https://images.bribrain.com/bas/wedding-audio.mp3";
   const [state, setState] = useState({
-    language: "EN",
+    language: "ID",
     modalKirimHadiah: false,
     openInvitation: false,
   });
@@ -74,6 +74,7 @@ export default function LandingPage(props: ILandingPage) {
 
           <PaymentAccountModal
             open={state.modalKirimHadiah}
+            language={state.language}
             handleBatalKirimHadiah={handleCloseKirimHadiah}
           />
         </>

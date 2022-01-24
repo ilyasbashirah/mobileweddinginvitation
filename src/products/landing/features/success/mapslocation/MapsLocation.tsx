@@ -5,24 +5,24 @@ import VenueExplanation from "@/src/products/landing/features/success/venueexpla
 export interface MapsLocationProps {}
 
 export default function MapsLocation({
-  language = "EN",
+  language = "ID",
 }: {
   language?: string;
 }) {
   const [state, setState] = useState({
-    lang: "EN",
+    lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
   }, [state.lang, language]);
   const textDatas = {
     title: {
-      en: "Wedding Venue",
-      id: "Peta Lokasi",
+      en: "The Wedding Day",
+      id: "Acara Pernikahan",
     },
     doa: {
       en: "We’re Getting Hitched! And We’d Be Delighted If You Could Join Our Wedding!",
-      id: "Dengan memanjatkan puji syukur serta memohon ridho dan rahmat Allah SWT kami bermaksud menyelenggarakan Syukuran Pernikahan putra-putri kami pada:",
+      id: "Dengan memanjatkan puji syukur serta memohon ridho dan rahmat Allah SWT kami bermaksud menyelenggarakan Syukuran Pernikahan pada:",
     },
     date: {
       en: "Tuesday, February 1st 2022",

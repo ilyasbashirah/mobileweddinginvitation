@@ -9,7 +9,7 @@ import style from "./style.module.scss";
 export interface OpenInvitationProps {}
 
 export default function OpenInvitation({
-  language = "en",
+  language = "ID",
   switchLanguageTo,
   openInvitation,
 }: {
@@ -21,10 +21,7 @@ export default function OpenInvitation({
     en: string;
     id: string;
   };
-  const countingDownDatas: textDatas = {
-    en: "Counting times for wedding party",
-    id: "Menghitung menuju hari bahagia",
-  };
+
   const nameDatas: textDatas = {
     en: "Yasmin & Bas",
     id: "Yasmin & Bas",
@@ -35,12 +32,9 @@ export default function OpenInvitation({
     id: "Buka Undangan",
   };
 
-  type StateType = {
-    lang: string;
-  };
-
-  const [state, setState] = useState<StateType>({
-    lang: "EN",
+  const [state, setState] = useState({
+    lang: "ID",
+    slideTop: false,
   });
 
   const nameText: string = state.lang.toLowerCase().includes("en")
@@ -62,10 +56,12 @@ export default function OpenInvitation({
   }, [state.lang, language]);
 
   const handleOpenInvitation = () => {
+    // setState({ ...state, slideTop: true });
     openInvitation();
   };
   return (
     <Banner
+      slideTop={state.slideTop}
       height={"open-invitation"}
       background={background}
       justify={"flex-start"}
@@ -99,19 +95,6 @@ export default function OpenInvitation({
                 color={"onyx"}
               >
                 {"01 Februari 2022 "}
-              </Typography>
-            </div>
-
-            <div className={style["divider"]} />
-
-            <div className={style["box-list"]}>
-              <img src={"/open_invitation/clock.svg"} />
-              <Typography
-                family={"montserrat"}
-                variant={"body-1-medium"}
-                color={"onyx"}
-              >
-                {"07.30 WIB"}
               </Typography>
             </div>
           </div>
