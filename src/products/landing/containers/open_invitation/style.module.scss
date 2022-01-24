@@ -1,0 +1,37 @@
+.container-counting-down {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.box-tulisan {
+  padding: 32px 20px;
+}
+
+.container-time-date {
+  display: grid;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: auto 1px auto;
+  width: 100%;
+  column-gap: 16px;
+  .box-list {
+    display: grid;
+    grid-template-columns: 16px auto;
+    column-gap: 12px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .divider {
+    height: 20px;
+    width: 1px;
+    background-color: #383838;
+  }
+}

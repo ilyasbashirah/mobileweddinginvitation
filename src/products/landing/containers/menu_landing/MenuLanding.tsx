@@ -9,7 +9,7 @@ export default function MenuLanding({
   language?: string;
 }) {
   const [state, setState] = useState({
-    active: "",
+    active: "bride-and-groom",
     lang: "EN",
   });
   useEffect(() => {

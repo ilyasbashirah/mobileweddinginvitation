@@ -11,6 +11,8 @@ import Section from "@/src/components/Section";
 import Footer from "@/src/products/landing/features/success/footer";
 import MenuLanding from "@/src/products/landing/containers/menu_landing/MenuLanding";
 import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/payment_account_modal/PaymentAccountModal";
+import OpenInvitation from "@/src/products/landing/containers/open_invitation";
+
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
@@ -18,10 +20,7 @@ export default function LandingPage(props: ILandingPage) {
   const [state, setState] = useState({
     language: "EN",
     modalKirimHadiah: false,
-    audio: false,
-    // wedding_audio: new Audio(
-    //   "https://images.bribrain.com/bas/wedding-audio.mp3"
-    // ),
+    openInvitation: false,
   });
 
   const handleSwitchLanguage = (lang: string) => {
@@ -34,67 +33,59 @@ export default function LandingPage(props: ILandingPage) {
   const handleCloseKirimHadiah = (condition: boolean) => {
     setState({ ...state, modalKirimHadiah: condition });
   };
-  // const Playit = () => {
-  //   state.wedding_audio.play();
-  // };
-  const handleOnClick = () => {
-    console.log("ini kepanggil ga");
-    setState({ ...state, audio: true });
 
-    // new Audio(sound).play();
+  const handleOpenInvitation = () => {
+    new Audio(sound).play();
+    setState({ ...state, openInvitation: true });
   };
-  useEffect(() => {
-    if ("Audio" in window) {
-      const apa = window.document.getElementById("test");
-      console.log(apa);
-      apa.addEventListener("click", () => {
-        console.log("test");
-      });
-    }
-  }, [window]);
-  useEffect(() => {
-    if (state.audio === true) {
-      new Audio(sound).play();
-    }
-  }, [state.audio]);
 
   return (
-    <div id={"test"} onClick={handleOnClick}>
-      {/* <button id={"audio"} onClick={handleOnClick} /> */}
-      <audio className="audio-element">
-        <source src={sound} />
-      </audio>
-      <Counting
-        language={state.language}
-        switchLanguageTo={handleSwitchLanguage}
-      />
-      <BrideGroom language={state.language} />
-      <Banner
-        id={"venue-maps-location"}
-        height={"venue-and-protocol"}
-        align={"flex-start"}
-        background={"/desktop/venueandprotocol/venueandprotocol_background.svg"}
-      >
-        <Section gap={44} align={"flex-start"} justify={"center"}>
-          <MapsLocation language={state.language} />
-          <HealthProtocol language={state.language} />
-        </Section>
-      </Banner>
-      <OurGallery language={state.language} />
-      <WeddingGift
-        language={state.language}
-        handleSendGiftToParent={handleKirimHadiah}
-      />
-      <Closing language={state.language} />
-      <Footer />
+    <div>
+      {state.openInvitation ? (
+        <>
+          <Counting
+            language={state.language}
+            switchLanguageTo={handleSwitchLanguage}
+          />
+          <BrideGroom language={state.language} />
+          <Banner
+            id={"venue-maps-location"}
+            height={"venue-and-protocol"}
+            align={"flex-start"}
+            background={
+              "/desktop/venueandprotocol/venueandprotocol_background.svg"
+            }
+          >
+            <Section gap={44} align={"flex-start"} justify={"center"}>
+              <MapsLocation language={state.language} />
+              <HealthProtocol language={state.language} />
+            </Section>
+          </Banner>
+          <OurGallery language={state.language} />
+          <WeddingGift
+            language={state.language}
+            handleSendGiftToParent={handleKirimHadiah}
+          />
+          <Closing language={state.language} />
+          <Footer />
 
-      {/* menu landing */}
-      <MenuLanding language={state.language} />
+          {/* menu landing */}
+          <MenuLanding language={state.language} />
 
-      <PaymentAccountModal
-        open={state.modalKirimHadiah}
-        handleBatalKirimHadiah={handleCloseKirimHadiah}
-      />
+          <PaymentAccountModal
+            open={state.modalKirimHadiah}
+            handleBatalKirimHadiah={handleCloseKirimHadiah}
+          />
+        </>
+      ) : (
+        <>
+          <OpenInvitation
+            language={state.language}
+            switchLanguageTo={handleSwitchLanguage}
+            openInvitation={handleOpenInvitation}
+          />
+        </>
+      )}
     </div>
   );
 }

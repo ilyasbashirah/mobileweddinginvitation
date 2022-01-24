@@ -6,6 +6,7 @@ export interface BannerProps {
   align?: "flex-start" | "center" | "flex-end";
   justify?: "flex-start" | "center" | "flex-end";
   height?:
+    | "open-invitation"
     | "counting-down"
     | "bride-and-groom"
     | "venue-and-protocol"
