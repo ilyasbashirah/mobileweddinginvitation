@@ -37,7 +37,7 @@ export default function Closing({ language = "" }: { language?: string }) {
   return (
     <Banner
       height={"closing"}
-      background={"/desktop/closing/closing_background.svg"}
+      background={"/desktop/closing/closing_background.png"}
     >
       {Object.keys(textDatas.datas).map((item: any, index: number) => {
         return (

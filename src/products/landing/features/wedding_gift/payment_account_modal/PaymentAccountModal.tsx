@@ -97,7 +97,10 @@ export default function PaymentAccountModal({
               <div className={style["container-bank-account-list"]}>
                 {textDatas.payment_method_options.bank_account.datas.map(
                   (item: any, index: number) => (
-                    <div className={style["box-copy-bank-account-list"]}>
+                    <div
+                      key={`box-copy-bank-account-list-${index}`}
+                      className={style["box-copy-bank-account-list"]}
+                    >
                       <div
                         key={`box-bank-account-list-${index}`}
                         className={style["box-bank-account-list"]}
@@ -142,6 +145,61 @@ export default function PaymentAccountModal({
               </div>
 
               {/* copy wallet another */}
+              <div className={style["container-e-wallet-account-list"]}>
+                <div className={style["bank-account-payment-method"]}>
+                  <Typography
+                    family={"montserrat"}
+                    variant={"body-1-bold"}
+                    color={"onyx"}
+                  >
+                    {"E-wallet"}
+                  </Typography>
+
+                  <div className={style["box-copy-e-wallet-account-list"]}>
+                    <div className={style["box-e-wallet-account-list"]}>
+                      <div className={style["box-icon-e-wallet-account"]}>
+                        <img
+                          src={"/desktop/weddinggift/e_wallet/e_wallet.svg"}
+                          alt={"icon-bank-account"}
+                        />
+                      </div>
+
+                      <div
+                        className={style["box-description-e-wallet-account"]}
+                      >
+                        <Typography
+                          family={"montserrat"}
+                          variant={"body-2-semibold"}
+                          color={"dark-liver"}
+                        >
+                          {"E-Wallet"}
+                        </Typography>
+
+                        <Typography
+                          family={"montserrat"}
+                          variant={"body-2-medium"}
+                          color={"gray"}
+                        >
+                          {"082218342044"}
+                        </Typography>
+                      </div>
+                    </div>
+
+                    {/* button copy */}
+                    <div onClick={() => handleCopyText("082218342044")}>
+                      <Typography
+                        family={"montserrat"}
+                        variant={"body-2-bold"}
+                        color={"cooper"}
+                      >
+                        {"Copy"}
+                      </Typography>
+                    </div>
+
+                    {/* end button copy */}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -57,7 +57,7 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
           <div
             className={style["box-large-photos"]}
             style={{
-              backgroundImage: `url("/desktop/gallery/photos/photos_top_1.svg")`,
+              backgroundImage: `url("/desktop/gallery/photos/photos_top_1.png")`,
             }}
           />
 
@@ -65,13 +65,13 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
             <div
               className={style["box-photos"]}
               style={{
-                backgroundImage: `url("/desktop/gallery/photos/photos_left_1.svg")`,
+                backgroundImage: `url("/desktop/gallery/photos/photos_left_1.png")`,
               }}
             />
             <div
               className={style["box-photos"]}
               style={{
-                backgroundImage: `url("/desktop/gallery/photos/photos_right_1.svg")`,
+                backgroundImage: `url("/desktop/gallery/photos/photos_right_1.png")`,
               }}
             />
           </div>
@@ -80,13 +80,13 @@ export default function OurGallery({ language = "EN" }: { language?: string }) {
             <div
               className={style["box-photos"]}
               style={{
-                backgroundImage: `url("/desktop/gallery/photos/photos_left_2.svg")`,
+                backgroundImage: `url("/desktop/gallery/photos/photos_left_2.png")`,
               }}
             />
             <div
               className={style["box-photos"]}
               style={{
-                backgroundImage: `url("/desktop/gallery/photos/photos_right_2.svg")`,
+                backgroundImage: `url("/desktop/gallery/photos/photos_right_2.png")`,
               }}
             >
               <Typography

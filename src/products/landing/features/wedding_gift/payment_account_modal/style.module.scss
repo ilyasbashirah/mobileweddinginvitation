@@ -8,7 +8,7 @@
     width: 100%;
     align-items: center;
     justify-content: flex-end;
-    padding:0px 12px;
+    padding: 0px 12px;
     .close-button {
       display: flex;
       align-items: center;
@@ -85,7 +85,7 @@
         .box-bank-account-list {
           display: grid;
           grid-template-columns: 54px 1fr;
-          column-gap: 16px;
+          column-gap: 12px;
 
           .box-icon-bank-account {
             background: #ffffff;
@@ -99,6 +99,57 @@
             align-content: center;
           }
           .box-description-bank-account {
+            display: grid;
+            row-gap: 12px;
+            justify-content: flex-start;
+            justify-items: flex-start;
+            align-items: flex-start;
+            align-content: flex-start;
+          }
+        }
+      }
+
+      // e-wallet
+      .container-e-wallet-account-list {
+        display: grid;
+
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        width: 100%;
+      }
+
+      .box-copy-e-wallet-account-list {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        width: 100%;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid #d0ad6b;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 12px;
+        .box-e-wallet-account-list {
+          display: flex;
+          display: grid;
+          grid-template-columns: 126px 1fr;
+          column-gap: 12px;
+          align-content: center;
+          align-items: center;
+
+          .box-icon-e-wallet-account {
+            background: #ffffff;
+
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+          }
+          .box-description-e-wallet-account {
             display: grid;
             row-gap: 12px;
             justify-content: flex-start;

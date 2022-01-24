@@ -31,8 +31,8 @@ export default function VenueExplanation({
         icon: "venue_hotel.svg",
       },
       time: {
-        en: "11.00 - 14.00 WIB",
-        id: "11.00 - 14.00 WIB",
+        en: "07.30 - 09.30 WIB",
+        id: "07.30 - 09.30 WIB",
         icon: "venue_clock.svg",
       },
       address: {
@@ -53,8 +53,8 @@ export default function VenueExplanation({
         icon: "venue_hotel.svg",
       },
       time: {
-        en: "11.00 - 14.00 WIB",
-        id: "11.00 - 14.00 WIB",
+        en: "10.30 - 13.30 WIB",
+        id: "10.30 - 13.30 WIB",
         icon: "venue_clock.svg",
       },
       address: {
