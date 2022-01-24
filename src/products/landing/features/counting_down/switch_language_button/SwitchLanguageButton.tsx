@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Typography from "@/src/components/Typography";
 import style from "./style.module.scss";
 
 export interface SwitchLanguageButtonProps {}
 
 export default function SwitchLanguageButton({
+  language = "ID",
   switchLanguageTo,
 }: {
+  language?: string;
   switchLanguageTo: (lang: string) => void;
 }) {
   const [state, setState] = useState({
     active: "",
-    language: "EN",
+    lang: "ID",
     layout: "text-logo",
   });
+  useEffect(() => {
+    setState({ ...state, lang: language });
+  }, [state.lang, language]);
   const handleSwitchLanguage = (lang: string) => {
-    let language = "EN";
+    let language = "ID";
     let layout = "text-logo";
     if (lang === "EN") {
       language = "ID";
@@ -25,15 +30,15 @@ export default function SwitchLanguageButton({
       language = "EN";
       layout = "text-logo";
     }
-    setState({ ...state, language: language, layout: layout });
+    setState({ ...state, lang: language, layout: layout });
     switchLanguageTo(language);
   };
-  const flagIcon: string = `/counting_down/translate/${state.language.toLowerCase()}_logo.svg`;
+  const flagIcon: string = `/counting_down/translate/${state.lang.toLowerCase()}_logo.svg`;
   return (
     <div>
       <div
         className={style["button-translate"]}
-        onClick={() => handleSwitchLanguage(state.language)}
+        onClick={() => handleSwitchLanguage(state.lang)}
       >
         {state.layout === "logo-text" && <img src={flagIcon} />}
         <Typography
@@ -42,7 +47,7 @@ export default function SwitchLanguageButton({
           family={"montserrat"}
           align={"center"}
         >
-          {state.language}
+          {state.lang}
         </Typography>
         {state.layout === "text-logo" && <img src={flagIcon} />}
       </div>

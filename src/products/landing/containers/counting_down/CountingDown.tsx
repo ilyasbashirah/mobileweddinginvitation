@@ -133,7 +133,10 @@ export default function Counting({
       justify={"flex-start"}
       align={"flex-start"}
     >
-      <SwitchLanguageButton switchLanguageTo={handleSwitchLanguage} />
+      <SwitchLanguageButton
+        language={language}
+        switchLanguageTo={handleSwitchLanguage}
+      />
 
       {/* counting down */}
       <div className={style["container-counting-down"]}>
