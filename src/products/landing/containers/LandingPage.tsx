@@ -14,6 +14,7 @@ import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/pa
 import OpenInvitation from "@/src/products/landing/containers/open_invitation";
 import CarouselModal from "../features/our_gallery/carousel_modal/CarouselModal";
 import style from "./style.module.scss";
+import { useScrollSpy } from "@/hooks";
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
@@ -49,6 +50,16 @@ export default function LandingPage(props: ILandingPage) {
   const handleCloseModalAction = () => {
     setState({ ...state, modalGallery: false });
   };
+
+  const ids = [
+    "bride-and-groom",
+    "venue-maps-location",
+    "health-protocol",
+    "our-gallery",
+    "wedding-gift",
+  ];
+  const activeId = useScrollSpy(ids, 54);
+  console.log(activeId);
   return (
     <>
       <OpenInvitation
@@ -69,7 +80,6 @@ export default function LandingPage(props: ILandingPage) {
         />
         <BrideGroom language={state.language} />
         <Banner
-          id={"venue-maps-location"}
           height={"venue-and-protocol"}
           align={"flex-start"}
           background={
@@ -94,7 +104,7 @@ export default function LandingPage(props: ILandingPage) {
         <Footer />
 
         {/* menu landing */}
-        <MenuLanding language={state.language} />
+        <MenuLanding activeId={activeId} language={state.language} />
 
         <PaymentAccountModal
           open={state.modalKirimHadiah}

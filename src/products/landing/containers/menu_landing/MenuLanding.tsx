@@ -4,17 +4,22 @@ import Typography from "@/src/components/Typography";
 export interface MenuLandingProps {}
 
 export default function MenuLanding({
+  activeId = "",
   language = "ID",
 }: {
+  activeId?: string;
   language?: string;
 }) {
   const [state, setState] = useState({
-    active: "bride-and-groom",
+    active: "",
     lang: "ID",
   });
   useEffect(() => {
     setState({ ...state, lang: language });
   }, [state.lang, language]);
+  useEffect(() => {
+    setState({ ...state, active: activeId });
+  }, [state.active, activeId]);
   const datas = {
     menu: {
       en: [
@@ -96,6 +101,7 @@ export default function MenuLanding({
     }
     setState({ ...state, active: sectionId });
   };
+  console.log(state.active,'ini naon')
   return (
     <div className={style["container-menu-landing"]}>
       {datas.menu[`${state.lang.toLowerCase()}`].map(
