@@ -6,8 +6,10 @@ import { useRouter } from "next/router";
 export interface HealthProtocolProps {}
 
 export default function HealthProtocol({
+  activeId = "",
   language = "ID",
 }: {
+  activeId?: string;
   language?: string;
 }) {
   const [state, setState] = useState({
@@ -51,6 +53,7 @@ export default function HealthProtocol({
   return (
     <div id={"health-protocol"} className={style["container-health-protocol"]}>
       <Typography
+        animation={activeId !== "bride-and-groom" ? "scale-up-center" : "none"}
         variant={"heading-1-regular"}
         color={"cooper"}
         family={"greatvibes"}
@@ -59,6 +62,7 @@ export default function HealthProtocol({
         {titleText}
       </Typography>
       <Typography
+        animation={activeId !== "bride-and-groom" ? "scale-up-center" : "none"}
         variant={"body-2-medium"}
         color={"onyx"}
         family={"montserrat"}
@@ -70,7 +74,10 @@ export default function HealthProtocol({
       <div className={style["container-box-health-protocol"]}>
         {Object.keys(textDatas.aspect).map((item: any) => {
           return (
-            <div key={`box-health-protocol-${item}`} className={style["box-health-protocol"]}>
+            <div
+              key={`box-health-protocol-${item}`}
+              className={style["box-health-protocol"]}
+            >
               <img src={textDatas.aspect[item]["img"]} />
               <Typography
                 variant={"body-2-semibold"}

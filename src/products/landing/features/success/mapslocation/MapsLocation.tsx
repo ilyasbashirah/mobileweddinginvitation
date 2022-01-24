@@ -6,8 +6,10 @@ export interface MapsLocationProps {}
 
 export default function MapsLocation({
   language = "ID",
+  activeId = "",
 }: {
   language?: string;
+  activeId?: string;
 }) {
   const [state, setState] = useState({
     lang: "ID",
@@ -35,8 +37,12 @@ export default function MapsLocation({
   const prayText: string = textDatas.doa[translate];
   const dateText: string = textDatas.date[translate];
   return (
-    <div id={"venue-maps-location"} className={style["section-maps-location-title"]}>
+    <div
+      id={"venue-maps-location"}
+      className={style["section-maps-location-title"]}
+    >
       <Typography
+        animation={activeId !== "counting-down" ? "scale-up-center" : "none"}
         variant={"heading-1-regular"}
         color={"cooper"}
         family={"greatvibes"}
@@ -46,6 +52,7 @@ export default function MapsLocation({
       </Typography>
       <div className={style["section-maps-location-description"]}>
         <Typography
+          animation={activeId !== "counting-down" ? "scale-up-center" : "none"}
           variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
@@ -54,6 +61,7 @@ export default function MapsLocation({
           {prayText}
         </Typography>
         <Typography
+          animation={activeId !== "counting-down" ? "scale-up-center" : "none"}
           variant={"body-1-bold"}
           color={"cooper"}
           family={"montserrat"}
@@ -62,7 +70,7 @@ export default function MapsLocation({
           {dateText}
         </Typography>
 
-        <VenueExplanation language={state.lang} />
+        <VenueExplanation activeId={activeId} language={state.lang} />
       </div>
     </div>
   );

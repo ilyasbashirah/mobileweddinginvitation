@@ -8,10 +8,12 @@ import Section from "@/src/components/Section";
 export interface OurGalleryProps {}
 
 export default function OurGallery({
+  activeId = "",
   language = "ID",
   seeMoreGallery = false,
   seeMoreDispatch,
 }: {
+  activeId?: string;
   language?: string;
   seeMore?: boolean;
   seeMoreDispatch?: () => void;
@@ -60,6 +62,9 @@ export default function OurGallery({
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <div className={style["padding-title-our-gallery"]}>
           <Typography
+            animation={
+              activeId !== "bride-and-groom" ? "scale-up-center" : "none"
+            }
             variant={"heading-1-regular"}
             color={"cooper"}
             family={"greatvibes"}
@@ -70,6 +75,9 @@ export default function OurGallery({
         </div>
 
         <Typography
+          animation={
+            activeId !== "bride-and-groom" ? "scale-up-center" : "none"
+          }
           variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}

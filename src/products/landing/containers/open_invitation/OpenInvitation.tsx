@@ -79,6 +79,7 @@ export default function OpenInvitation({
             height={"100%"}
           />
           <Typography
+            animation={"fade-in-fwd-1"}
             family={"greatvibes"}
             variant={"heading-1-regular"}
             color={"cooper"}
@@ -90,6 +91,7 @@ export default function OpenInvitation({
             <div className={style["box-list"]}>
               <img src={"/open_invitation/calendar.svg"} />
               <Typography
+                animation={"fade-in-fwd-1"}
                 family={"montserrat"}
                 variant={"body-1-medium"}
                 color={"onyx"}

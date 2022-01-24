@@ -5,7 +5,13 @@ import Banner from "@/src/components/Banner";
 
 export interface ClosingProps {}
 
-export default function Closing({ language = "ID" }: { language?: string }) {
+export default function Closing({
+  language = "ID",
+  activeId = "",
+}: {
+  language?: string;
+  activeId?: string;
+}) {
   const [state, setState] = useState({
     active: "",
     lang: "ID",
@@ -44,6 +50,9 @@ export default function Closing({ language = "ID" }: { language?: string }) {
         {Object.keys(textDatas.datas).map((item: any, index: number) => {
           return (
             <Typography
+              animation={
+                activeId !== "health-protocol" ? "scale-up-center" : "none"
+              }
               key={`typography-${index}`}
               family={"montserrat"}
               variant={"body-2-medium"}
@@ -55,6 +64,9 @@ export default function Closing({ language = "ID" }: { language?: string }) {
           );
         })}
         <Typography
+          animation={
+            activeId !== "health-protocol" ? "scale-up-center" : "none"
+          }
           family={"montserrat"}
           variant={"subtitle-2-bold"}
           color={"white"}

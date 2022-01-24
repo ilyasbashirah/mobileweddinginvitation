@@ -8,8 +8,10 @@ import Button from "@/src/components/Button";
 export interface VenueExplanationProps {}
 
 export default function VenueExplanation({
+  activeId = "",
   language = "ID",
 }: {
+  activeId?: string;
   language?: string;
 }) {
   const [state, setState] = useState({
@@ -94,7 +96,7 @@ export default function VenueExplanation({
     window.open(`https://www.youtube.com`);
   };
   return (
-    <Card>
+    <Card activeId={activeId}>
       <div className={style["container-venue-explanation"]}>
         <div className={style["container-box-list-info"]}>
           <div className={style["container-list-info"]}>

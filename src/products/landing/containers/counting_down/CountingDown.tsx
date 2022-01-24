@@ -9,9 +9,11 @@ import style from "./style.module.scss";
 export interface CountingProps {}
 
 export default function Counting({
+  animation = false,
   language = "ID",
   switchLanguageTo,
 }: {
+  animation?: boolean;
   language?: string;
   switchLanguageTo?: (lang: string) => void;
 }) {
@@ -60,6 +62,7 @@ export default function Counting({
       detik: number;
     };
     lang: string;
+    animation: boolean;
   };
 
   const yearNow = new Date().getFullYear();
@@ -73,6 +76,7 @@ export default function Counting({
     },
 
     lang: "ID",
+    animation: false,
   });
   useEffect(() => {
     const interval = setTimeout(() => {
@@ -125,9 +129,13 @@ export default function Counting({
   useEffect(() => {
     setState({ ...state, lang: language });
   }, [state.lang, language]);
+  // useEffect(() => {
+  //   setState({ ...state, animation: animation });
+  // }, [state.animation, animation]);
 
   return (
     <Banner
+      id={"counting-down"}
       height={"counting-down"}
       background={background}
       justify={"flex-start"}
@@ -148,6 +156,7 @@ export default function Counting({
             height={"100%"}
           />
           <Typography
+            animation={animation ? "fade-in-fwd-2" : "none"}
             family={"greatvibes"}
             variant={"heading-1-regular"}
             color={"cooper"}
@@ -155,6 +164,7 @@ export default function Counting({
             {nameText}
           </Typography>
           <Typography
+            animation={animation ? "fade-in-fwd-2" : "none"}
             family={"montserrat"}
             variant={"body-1-medium"}
             color={"onyx"}
@@ -168,6 +178,7 @@ export default function Counting({
                 className={style["box-timer"]}
               >
                 <Typography
+                  animation={animation ? "fade-in-fwd-2" : "none"}
                   family={"montserrat"}
                   color={"cooper"}
                   variant={"subtitle-1-bold"}
@@ -175,6 +186,7 @@ export default function Counting({
                   {state.time[item]}
                 </Typography>
                 <Typography
+                  animation={animation ? "fade-in-fwd-2" : "none"}
                   family={"montserrat"}
                   color={"cooper"}
                   variant={"caption-1-semibold"}

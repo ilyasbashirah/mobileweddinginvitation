@@ -5,7 +5,15 @@ import Section from "@/src/components/Section";
 import Typography from "@/src/components/Typography";
 export interface BrideGroomProps {}
 
-export default function BrideGroom({ language = "ID" }: { language: string }) {
+export default function BrideGroom({
+  language = "ID",
+  activeId = "",
+  animation = false,
+}: {
+  language?: string;
+  activeId?: string;
+  animation?: boolean;
+}) {
   const [state, setState] = useState({
     lang: "ID",
   });
@@ -76,6 +84,7 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <Typography
+          animation={animation ? "fade-in-fwd-2" : "null"}
           variant={"heading-1-regular"}
           color={"cooper"}
           family={"greatvibes"}
@@ -85,6 +94,7 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
         </Typography>
 
         <Typography
+          animation={animation ? "fade-in-fwd-2" : "null"}
           variant={"body-2-medium"}
           color={"onyx"}
           family={"montserrat"}
@@ -103,8 +113,13 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
 
         <div className={style["container-bride-photos"]}>
           <div
-            className={style["container-bride-photos"]}
-            onClick={() => handleClickToInstagram("milyasbpa")}
+            id={"container-bride-photos"}
+            className={`${style["container-bride-photos"]} ${
+              activeId !== "counting-down"
+                ? style["container-bride-photos--slide-right"]
+                : style["container-bride-photos--none"]
+            }`}
+            onClick={() => handleClickToInstagram("yasminsyrf")}
           >
             <img
               className={style["image-bride-and-groom"]}
@@ -113,6 +128,9 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
           </div>
           <div className={style["container-identity"]}>
             <Typography
+              animation={
+                activeId !== "counting-down" ? "scale-up-center" : "none"
+              }
               variant={"subtitle-2-bold"}
               color={"onyx"}
               family={"montserrat"}
@@ -121,6 +139,9 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
               {brideNameText}
             </Typography>
             <Typography
+              animation={
+                activeId !== "counting-down" ? "scale-up-center" : "none"
+              }
               variant={"body-2-medium"}
               color={"onyx"}
               family={"montserrat"}
@@ -133,7 +154,12 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
 
         <div className={style["container-groom-photos"]}>
           <div
-            className={style["container-groom-photos"]}
+            id={"container-groom-photos"}
+            className={`${style["container-groom-photos"]} ${
+              activeId !== "counting-down"
+                ? style["container-groom-photos--slide-left"]
+                : style["container-groom-photos--none"]
+            }`}
             onClick={() => handleClickToInstagram("milyasbpa")}
           >
             <img
@@ -144,6 +170,9 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
 
           <div className={style["container-identity"]}>
             <Typography
+              animation={
+                activeId !== "counting-down" ? "scale-up-center" : "none"
+              }
               variant={"subtitle-2-bold"}
               color={"onyx"}
               family={"montserrat"}
@@ -152,6 +181,9 @@ export default function BrideGroom({ language = "ID" }: { language: string }) {
               {groomNameText}
             </Typography>
             <Typography
+              animation={
+                activeId !== "counting-down" ? "scale-up-center" : "none"
+              }
               variant={"body-2-medium"}
               color={"onyx"}
               family={"montserrat"}

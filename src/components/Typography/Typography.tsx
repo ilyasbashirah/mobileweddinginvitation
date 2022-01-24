@@ -23,6 +23,7 @@ const Typography = ({
   color = "light-gray",
   paragraph = true,
   family = "montserrat",
+  animation = "null",
 }: {
   children?: string;
   variant?: Variant;
@@ -31,6 +32,14 @@ const Typography = ({
   device?: string;
   paragraph?: boolean;
   family?: "montserrat" | "greatvibes";
+  animation?:
+    | "scale-up-center"
+    | "slide-top"
+    | "none"
+    | "null"
+    | "fade-in-fwd-2"
+    | "fade-in-fwd-1"
+    | "fade-in-fwd-05";
 }): ReactElement => {
   const deviceFontVariant: string = `typography--${variant}`;
 
@@ -38,6 +47,18 @@ const Typography = ({
     style[`typography-color--${color}`]
   } ${style[deviceFontVariant]} ${style[`typography-align--${align}`]} ${
     style[`typography-family--${family}`]
+  } ${
+    animation === "scale-up-center"
+      ? style[`typography-animation--scale-up-center`]
+      : animation === "slide-top"
+      ? style[`typography-animation--slide-top`]
+      : animation === "none"
+      ? style[`typography-animation--none`]
+      : animation === "fade-in-fwd-2"
+      ? style[`typography-animation--fade-in-fwd-2`]
+      : animation === "fade-in-fwd-05"
+      ? style[`typography-animation--fade-in-fwd-05`]
+      : ""
   }
 `;
 

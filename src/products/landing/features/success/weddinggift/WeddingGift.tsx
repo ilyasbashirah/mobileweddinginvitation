@@ -8,9 +8,11 @@ import Button from "@/src/components/Button";
 export interface WeddingGiftProps {}
 
 export default function WeddingGift({
+  activeId = "",
   language = "ID",
   handleSendGiftToParent,
 }: {
+  activeId?: string;
   language?: string;
   handleSendGiftToParent?: () => void;
 }) {
@@ -58,6 +60,9 @@ export default function WeddingGift({
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <div className={style["section-text-wedding-gift"]}>
           <Typography
+            animation={
+              activeId !== "bride-and-groom" ? "scale-up-center" : "none"
+            }
             variant={"heading-1-regular"}
             color={"cooper"}
             family={"greatvibes"}
@@ -66,6 +71,9 @@ export default function WeddingGift({
             {titleText}
           </Typography>
           <Typography
+            animation={
+              activeId !== "bride-and-groom" ? "scale-up-center" : "none"
+            }
             variant={"body-2-medium"}
             color={"onyx"}
             family={"montserrat"}
@@ -74,6 +82,9 @@ export default function WeddingGift({
             {description1Text}
           </Typography>
           <Typography
+            animation={
+              activeId !== "bride-and-groom" ? "scale-up-center" : "none"
+            }
             variant={"body-2-medium"}
             color={"onyx"}
             family={"montserrat"}

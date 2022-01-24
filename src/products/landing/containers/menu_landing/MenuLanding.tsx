@@ -90,6 +90,8 @@ export default function MenuLanding({
         ? -24
         : sectionId === "venue-maps-location"
         ? -24
+        : sectionId === "our-gallery"
+        ? 48
         : -10;
     if (elementSection !== null && typeof window !== undefined) {
       const y =
@@ -101,7 +103,6 @@ export default function MenuLanding({
     }
     setState({ ...state, active: sectionId });
   };
-  console.log(state.active,'ini naon')
   return (
     <div className={style["container-menu-landing"]}>
       {datas.menu[`${state.lang.toLowerCase()}`].map(

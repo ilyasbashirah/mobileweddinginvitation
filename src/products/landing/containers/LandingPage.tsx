@@ -39,7 +39,6 @@ export default function LandingPage(props: ILandingPage) {
 
   const handleOpenInvitation = () => {
     new Audio(sound).play();
-    new Audio(sound).loop = true;
 
     setState({ ...state, openInvitation: true });
   };
@@ -52,6 +51,7 @@ export default function LandingPage(props: ILandingPage) {
   };
 
   const ids = [
+    "counting-down",
     "bride-and-groom",
     "venue-maps-location",
     "health-protocol",
@@ -60,6 +60,7 @@ export default function LandingPage(props: ILandingPage) {
   ];
   const activeId = useScrollSpy(ids, 54);
   console.log(activeId);
+  console.log(state.openInvitation, "open invitation");
   return (
     <>
       <OpenInvitation
@@ -75,10 +76,15 @@ export default function LandingPage(props: ILandingPage) {
         }`}
       >
         <Counting
+          animation={state.openInvitation}
           language={state.language}
           switchLanguageTo={handleSwitchLanguage}
         />
-        <BrideGroom language={state.language} />
+        <BrideGroom
+          activeId={activeId}
+          animation={state.openInvitation}
+          language={state.language}
+        />
         <Banner
           height={"venue-and-protocol"}
           align={"flex-start"}
@@ -87,20 +93,22 @@ export default function LandingPage(props: ILandingPage) {
           }
         >
           <Section gap={44} align={"flex-start"} justify={"center"}>
-            <MapsLocation language={state.language} />
-            <HealthProtocol language={state.language} />
+            <MapsLocation activeId={activeId} language={state.language} />
+            <HealthProtocol activeId={activeId} language={state.language} />
           </Section>
         </Banner>
         <OurGallery
+          activeId={activeId}
           language={state.language}
           seeMore={state.modalGallery}
           seeMoreDispatch={handleSeeMore}
         />
         <WeddingGift
+          activeId={activeId}
           language={state.language}
           handleSendGiftToParent={handleKirimHadiah}
         />
-        <Closing language={state.language} />
+        <Closing activeId={activeId} language={state.language} />
         <Footer />
 
         {/* menu landing */}
