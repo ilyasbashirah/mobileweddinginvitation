@@ -63,6 +63,16 @@ export default function VenueExplanation({
         icon: "venue_point.svg",
       },
     },
+    buttonText: {
+      maps: {
+        en: "Open Maps",
+        id: "Buka Peta",
+      },
+      live: {
+        en: "Live Streaming",
+        id: "Siaran Langsung",
+      },
+    },
   };
   const latLng = {
     lat: -6.866577101840134,
@@ -125,12 +135,12 @@ export default function VenueExplanation({
 
         <div className={style["section-button"]}>
           <Button
-            text={"Buka Maps"}
+            text={textDatas.buttonText.maps[state.lang.toLowerCase()]}
             variant={"primary"}
             onClick={handleLinkToGoogleMaps}
           />
           <Button
-            text={"Live Streaming"}
+            text={textDatas.buttonText.live[state.lang.toLowerCase()]}
             variant={"secondary"}
             onClick={handleLinkToYoutube}
           />
