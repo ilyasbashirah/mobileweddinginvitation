@@ -18,7 +18,7 @@ export default function Footer({ language = "ID" }: { language?: string }) {
     },
   };
   const handleContactViaWa = () => {
-    window.location.replace("https://wa.me/<number>");
+    window.location.replace("https://wa.me/081395729386");
   };
   return (
     <div className={style["container-footer"]} onClick={handleContactViaWa}>
