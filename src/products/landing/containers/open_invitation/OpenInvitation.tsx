@@ -56,7 +56,7 @@ export default function OpenInvitation({
   }, [state.lang, language]);
 
   const handleOpenInvitation = () => {
-    // setState({ ...state, slideTop: true });
+    setState({ ...state, slideTop: true });
     openInvitation();
   };
   return (

@@ -13,6 +13,7 @@ import MenuLanding from "@/src/products/landing/containers/menu_landing/MenuLand
 import PaymentAccountModal from "@/src/products/landing/features/wedding_gift/payment_account_modal/PaymentAccountModal";
 import OpenInvitation from "@/src/products/landing/containers/open_invitation";
 import CarouselModal from "../features/our_gallery/carousel_modal/CarouselModal";
+import style from "./style.module.scss";
 export interface ILandingPage {}
 
 export default function LandingPage(props: ILandingPage) {
@@ -36,7 +37,9 @@ export default function LandingPage(props: ILandingPage) {
   };
 
   const handleOpenInvitation = () => {
+    new Audio(sound).loop = true;
     new Audio(sound).play();
+
     setState({ ...state, openInvitation: true });
   };
 
@@ -47,63 +50,64 @@ export default function LandingPage(props: ILandingPage) {
     setState({ ...state, modalGallery: false });
   };
   return (
-    <div>
-      {state.openInvitation ? (
-        <>
-          <Counting
-            language={state.language}
-            switchLanguageTo={handleSwitchLanguage}
-          />
-          <BrideGroom language={state.language} />
-          <Banner
-            id={"venue-maps-location"}
-            height={"venue-and-protocol"}
-            align={"flex-start"}
-            background={
-              "/desktop/venueandprotocol/venueandprotocol_background.svg"
-            }
-          >
-            <Section gap={44} align={"flex-start"} justify={"center"}>
-              <MapsLocation language={state.language} />
-              <HealthProtocol language={state.language} />
-            </Section>
-          </Banner>
-          <OurGallery
-            language={state.language}
-            seeMore={state.modalGallery}
-            seeMoreDispatch={handleSeeMore}
-          />
-          <WeddingGift
-            language={state.language}
-            handleSendGiftToParent={handleKirimHadiah}
-          />
-          <Closing language={state.language} />
-          <Footer />
+    <>
+      <OpenInvitation
+        language={state.language}
+        switchLanguageTo={handleSwitchLanguage}
+        openInvitation={handleOpenInvitation}
+      />
+      <div
+        className={`${
+          state.openInvitation
+            ? style["wrapper--active"]
+            : style["wrapper--inactive"]
+        }`}
+      >
+        <Counting
+          language={state.language}
+          switchLanguageTo={handleSwitchLanguage}
+        />
+        <BrideGroom language={state.language} />
+        <Banner
+          id={"venue-maps-location"}
+          height={"venue-and-protocol"}
+          align={"flex-start"}
+          background={
+            "/desktop/venueandprotocol/venueandprotocol_background.svg"
+          }
+        >
+          <Section gap={44} align={"flex-start"} justify={"center"}>
+            <MapsLocation language={state.language} />
+            <HealthProtocol language={state.language} />
+          </Section>
+        </Banner>
+        <OurGallery
+          language={state.language}
+          seeMore={state.modalGallery}
+          seeMoreDispatch={handleSeeMore}
+        />
+        <WeddingGift
+          language={state.language}
+          handleSendGiftToParent={handleKirimHadiah}
+        />
+        <Closing language={state.language} />
+        <Footer />
 
-          {/* menu landing */}
-          <MenuLanding language={state.language} />
+        {/* menu landing */}
+        <MenuLanding language={state.language} />
 
-          <PaymentAccountModal
-            open={state.modalKirimHadiah}
-            language={state.language}
-            handleBatalKirimHadiah={handleCloseKirimHadiah}
+        <PaymentAccountModal
+          open={state.modalKirimHadiah}
+          language={state.language}
+          handleBatalKirimHadiah={handleCloseKirimHadiah}
+        />
+        {state.modalGallery && (
+          <CarouselModal
+            closeModalAction={handleCloseModalAction}
+            openModalGallery={state.modalGallery}
           />
-          {state.modalGallery && (
-            <CarouselModal
-              closeModalAction={handleCloseModalAction}
-              openModalGallery={state.modalGallery}
-            />
-          )}
-        </>
-      ) : (
-        <>
-          <OpenInvitation
-            language={state.language}
-            switchLanguageTo={handleSwitchLanguage}
-            openInvitation={handleOpenInvitation}
-          />
-        </>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }

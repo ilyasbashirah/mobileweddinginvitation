@@ -33,7 +33,7 @@ export default function Banner({
         style[`banner-align--${align}`]
       } ${style[`banner-height--${height}`]} ${
         slideTop && style[`banner--slide-out-top`]
-      }`}
+      } ${height === "open-invitation" && style[`banner--open-invitation`]} `}
       style={{ backgroundImage: `url(${background})` }}
     >
       {children}
