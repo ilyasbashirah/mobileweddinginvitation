@@ -102,7 +102,7 @@ export default function BrideGroom({ language = "EN" }: { language: string }) {
         <div className={style["container-bride-photos"]}>
           <img
             className={style["image-bride-and-groom"]}
-            src={"/desktop/brideandgroom/brideandgroom_yasmin.svg"}
+            src={"/desktop/brideandgroom/brideandgroom_yasmin.png"}
           />
           <div className={style["container-identity"]}>
             <Typography
@@ -127,7 +127,7 @@ export default function BrideGroom({ language = "EN" }: { language: string }) {
         <div className={style["container-groom-photos"]}>
           <img
             className={style["image-bride-and-groom"]}
-            src={"/desktop/brideandgroom/brideandgroom_bas.svg"}
+            src={"/desktop/brideandgroom/brideandgroom_bas.png"}
           />
           <div className={style["container-identity"]}>
             <Typography

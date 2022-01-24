@@ -5,7 +5,7 @@ import Banner from "@/src/components/Banner";
 
 export interface ClosingProps {}
 
-export default function Closing({ language = "" }: { language?: string }) {
+export default function Closing({ language = "EN" }: { language?: string }) {
   const [state, setState] = useState({
     active: "",
     lang: "EN",
@@ -37,6 +37,7 @@ export default function Closing({ language = "" }: { language?: string }) {
   return (
     <Banner
       height={"closing"}
+      align={'flex-end'}
       background={"/desktop/closing/closing_background.png"}
     >
       {Object.keys(textDatas.datas).map((item: any, index: number) => {

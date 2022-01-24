@@ -36,12 +36,12 @@ export default function MenuLanding({
         {
           id: "our-gallery",
           title: "Gallery",
-          icon: "mempelai",
+          icon: "galeri",
         },
         {
           id: "wedding-gift",
           title: "Gift",
-          icon: "mempelai",
+          icon: "gift",
         },
       ],
       id: [
