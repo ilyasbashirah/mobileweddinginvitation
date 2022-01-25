@@ -101,6 +101,7 @@ export default function OurGallery({
                 backgroundImage: `url("/desktop/gallery/photos/photos_left_1.png")`,
               }}
             />
+
             <div
               className={style["box-photos"]}
               style={{
