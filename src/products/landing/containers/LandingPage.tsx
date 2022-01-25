@@ -59,8 +59,6 @@ export default function LandingPage(props: ILandingPage) {
     "wedding-gift",
   ];
   const activeId = useScrollSpy(ids, 54);
-  console.log(activeId);
-  console.log(state.openInvitation, "open invitation");
   return (
     <>
       <OpenInvitation
