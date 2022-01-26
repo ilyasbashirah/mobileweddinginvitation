@@ -93,7 +93,7 @@ export default function VenueExplanation({
     );
   };
   const handleLinkToYoutube = () => {
-    window.open(`https://www.youtube.com`);
+    window.open(`https://youtu.be/h2_no1Rr1rw`);
   };
   return (
     <Card activeId={activeId}>
