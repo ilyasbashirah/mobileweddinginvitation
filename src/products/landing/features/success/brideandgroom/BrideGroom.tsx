@@ -80,7 +80,9 @@ export default function BrideGroom({
       height={"bride-and-groom"}
       align={"flex-start"}
       justify={"center"}
-      background={"/desktop/brideandgroom/brideandgroom_background.svg"}
+      background={
+        "https://images.bribrain.com/bas/mobile/background/brideandgroom_background.svg"
+      }
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <Typography

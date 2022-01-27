@@ -87,7 +87,7 @@ export default function LandingPage(props: ILandingPage) {
           height={"venue-and-protocol"}
           align={"flex-start"}
           background={
-            "/desktop/venueandprotocol/venueandprotocol_background.svg"
+            "https://images.bribrain.com/bas/mobile/background/venueandprotocol_background.svg"
           }
         >
           <Section gap={44} align={"flex-start"} justify={"center"}>

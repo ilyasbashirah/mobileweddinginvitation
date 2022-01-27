@@ -44,7 +44,9 @@ export default function Closing({
     <Banner
       height={"closing"}
       align={"flex-end"}
-      background={"/desktop/closing/closing_background.png"}
+      background={
+        "https://images.bribrain.com/bas/mobile/closing/closing_background.png"
+      }
     >
       <div className={style["section-text-description"]}>
         {Object.keys(textDatas.datas).map((item: any, index: number) => {

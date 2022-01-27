@@ -57,7 +57,7 @@ export default function OurGallery({
       id={"our-gallery"}
       height={"our-gallery"}
       align={"flex-start"}
-      background={"/desktop/gallery/gallery_background.svg"}
+      background={"https://images.bribrain.com/bas/mobile/background/gallery_background.svg"}
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <div className={style["padding-title-our-gallery"]}>

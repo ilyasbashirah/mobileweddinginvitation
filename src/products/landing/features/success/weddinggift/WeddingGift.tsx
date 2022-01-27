@@ -55,7 +55,7 @@ export default function WeddingGift({
       height={"wedding-gift"}
       align={"flex-start"}
       justify={"center"}
-      background={"/desktop/weddinggift/weddinggift_background.svg"}
+      background={"https://images.bribrain.com/bas/mobile/background/weddinggift_background.svg"}
     >
       <Section gap={36} align={"flex-start"} justify={"center"}>
         <div className={style["section-text-wedding-gift"]}>
