@@ -81,9 +81,14 @@ export default function CarouselModal({
             />
           </div>
 
-          <img
+          {/* <img
             onClick={() => handleClickNext(state.active)}
             src={`/desktop/gallery/carousel/collection/photo_${state.active}.png`}
+            width={"100%"}
+          /> */}
+          <img
+            onClick={() => handleClickNext(state.active)}
+            src={`https://images.bribrain.com/bas/mobile/photo_${state.active}.png`}
             width={"100%"}
           />
 
