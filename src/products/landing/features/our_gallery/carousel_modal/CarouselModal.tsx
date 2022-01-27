@@ -70,9 +70,7 @@ export default function CarouselModal({
             />
           </div>
         </div>
-        <div
-          className={style["container-gallery-photos"]}
-        >
+        <div className={style["container-gallery-photos"]}>
           <div
             className={style["icon-arrow-right"]}
             onClick={() => handleClickPrevious(state.active)}
@@ -84,13 +82,12 @@ export default function CarouselModal({
           </div>
 
           <img
+            onClick={() => handleClickNext(state.active)}
             src={`/desktop/gallery/carousel/collection/photo_${state.active}.png`}
             width={"100%"}
           />
-          <div
-            className={style["icon-arrow-right"]}
-            onClick={() => handleClickNext(state.active)}
-          >
+
+          <div className={style["icon-arrow-right"]}>
             <img src={`/desktop/gallery/carousel/arrow_right.svg`} />
           </div>
         </div>
