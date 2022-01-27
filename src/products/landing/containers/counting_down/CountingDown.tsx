@@ -120,7 +120,7 @@ export default function Counting({
   const timeText = [hariText, jamText, menitText, detikText];
 
   const background: string =
-    "/desktop/countingdown/countingdown_background.svg";
+    "https://images.bribrain.com/bas/mobile/counting_down/countingdown_background.svg";
   const handleSwitchLanguage = (lang: string) => {
     setState({ ...state, lang: lang });
     switchLanguageTo(lang);
@@ -150,7 +150,7 @@ export default function Counting({
       <div className={style["container-counting-down"]}>
         <Section gap={24} align={"flex-start"} justify={"center"}>
           <img
-            src={"/desktop/countingdown/countingdown_illustration.svg"}
+            src={"https://images.bribrain.com/bas/mobile/counting_down/countingdown_illustration.svg"}
             alt={"bride-and-groom"}
             width={"100%"}
             height={"100%"}
