@@ -87,7 +87,10 @@ export default function CarouselModal({
             width={"100%"}
           />
 
-          <div className={style["icon-arrow-right"]}>
+          <div
+            className={style["icon-arrow-right"]}
+            onClick={() => handleClickNext(state.active)}
+          >
             <img src={`/desktop/gallery/carousel/arrow_right.svg`} />
           </div>
         </div>
